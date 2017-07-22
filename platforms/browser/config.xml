@@ -1,0 +1,14 @@
+<?xml version='1.0' encoding='utf-8'?>
+<widget android-versionCode="1" id="ch.papers.test" version="1.0.0" xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://cordova.apache.org/ns/1.0">
+    <name>Ongaku CCB</name>
+    <description>
+      Aplicativo para criação de relatórios de ensaios.
+    </description>
+    <author email="lenilsonmadureira@gmail.com" href="">
+        Lenilson Madureira
+    </author>
+    <preference name="Orientation" value="portrait" />
+    <preference name="Fullscreen" value="true" />
+    <preference name="DisallowOverscroll" value="true" />
+    <preference name="BackgroundColor" value="0x081B27FF" />
+</widget>
