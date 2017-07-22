@@ -1,0 +1,139 @@
+
+@font-face{
+
+	font-family: Lato;
+	src: url('fonts/Lato/Lato-Light.ttf')  format('truetype');
+}
+
+html,body{
+	background-color:  #081b27;
+	color:#f0f2f0;
+	height: 100%;
+}
+.container-main{
+	width: 100%;
+	min-height:100%;
+	max-width: 0 auto;
+	margin: 0 auto;
+	position: relative;
+	overflow-y: hidden;
+	font-family: 'Lato', sans-serif;  
+}
+.topo-index{
+	width: 100%;
+	margin: 0 auto;
+}
+#topo-titulo{
+	font-size: 2rem;
+	margin: 0 auto;
+	padding: 10%;
+	
+}
+.sol-img,
+.sol-img img{
+	width: 15em;
+	height: 15em;
+	margin: 0 auto;
+}
+
+.box-login{
+	width: 15em;
+	height: 15em;
+	margin: 0 auto;
+	position: relative;
+	z-index: 1;
+
+}
+.form-login{
+	margin-top: 40%;
+}
+.form-login a{
+	margin-left: 32%
+}
+
+.login input[type=email]{
+		
+	width: 100%;
+	height: 20px;
+	background: transparent;
+	border: 1px solid #2dbfbf;
+	border-radius: 2px;
+	border-top:transparent;
+	border-left: transparent;
+	border-right:transparent;
+	outline: none;
+	color: #fff;
+	font-family: 'Lato', sans-serif;
+	font-size: 1em;
+	font-weight: 400;
+	padding:0.25em;
+}
+
+.login input[type=password]{
+		
+	width: 100%;
+	height: 20px;
+	background: transparent;
+	border: 1px solid #2dbfbf;
+	border-radius: 2px;
+	border-top:transparent;
+	border-left: transparent;
+	border-right:transparent;
+	outline: none;
+	color: #fff;
+	font-family: 'Lato', sans-serif;
+	font-size: 1em;
+	font-weight: 400;
+	padding: 0.25em;
+	margin-top: 0.1875em; /* Igual a 3px*/
+}
+::-webkit-input-placeholder {
+   color: #2dbfbf;
+}
+
+:-moz-placeholder { /* Firefox 18- */
+   color: #2dbfbf;  
+}
+
+::-moz-placeholder {  /* Firefox 19+ */
+   color: #2dbfbf;  
+}
+
+:-ms-input-placeholder {  
+   color: #2dbfbf;  
+}
+
+
+.botao{
+	
+	margin: 1em;
+	margin-left: 0; /*  */
+	position: relative;
+
+	  width: 100%;
+	  height: 2rem;  
+	  color: #fff;
+	  background-image: linear-gradient(45deg, #005b27, #00BFFF);
+	  font-size: 1rem;
+	  font-weight: bold
+	  text-align:center;
+	  border-radius: 1px;
+	  border: none;
+	  cursor: pointer;
+	  overflow: hidden;
+	  -webkit-transition: width 0.3s 0.15s, font-size 0.1s 0.15s;
+	  transition: width 0.3s 0.15s, font-size 0.1s 0.15s;
+}
+.btn-entrar{
+	margin-top: -20%;
+	position: relative;
+}
+
+.material-icons{
+	width: 0.5rem;
+}
+.camp-senha{
+
+	margin-top: 20%;
+	position: relative;
+}
