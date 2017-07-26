@@ -7,9 +7,7 @@
     <author email="lenilsonmadureira@gmail.com" href="">
         Lenilson Madureira
     </author>
-    
-    <access origin=""/><!-- Acesso para serviços externos (http://  abc.) ou *(all)-->
-
+    <access origin="" />
     <preference name="Orientation" value="portrait" />
     <preference name="Fullscreen" value="true" />
     <preference name="DisallowOverscroll" value="true" />
