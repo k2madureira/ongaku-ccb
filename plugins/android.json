@@ -12,6 +12,9 @@
         },
         "cordova-plugin-statusbar": {
             "PACKAGE_NAME": "ch.papers.test"
+        },
+        "cordova-sqlite-storage": {
+            "PACKAGE_NAME": "ch.papers.test"
         }
     },
     "dependent_plugins": {}

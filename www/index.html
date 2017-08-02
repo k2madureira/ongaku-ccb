@@ -4,63 +4,254 @@
 	<meta charset="UTF-8">
     <meta name="format-detection" content="telephone=no">
     <meta name="msapplication-tap-highlight" content="no">
-	  <link rel="stylesheet" type="text/css" href="css/style.css">
-    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+     <!-- __________________ Css externo ______________________________________________________________________-->
     <link type="text/css" rel="stylesheet" href="public/css/materialize.min.css"  media="screen,projection"/>
     <link rel="stylesheet" type="text/css" href="public/css/animate.css">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <!-- __________________ Css ____________________________________________________________________________  -->
+    <link rel="stylesheet" type="text/css" href="css/reset.css">
+	  <link rel="stylesheet" type="text/css" href="css/style.css">
+   
+    <!-- __________________ _____________ ____________________________________________________________________-->
+    
 	<title>Two|C|one|B</title>
 </head>
-<body>
+<!--============================  BODY/MAIN ===== =============================================================-->
+<body onload= "onLoad()">
 <main class="container-main">
-  <header class="topo-index">
-     <div class="sol-img">
-           <img src="img/clave-sol.png"  alt="Clave de sol"> 
-           <h1 id="topo-titulo">Ongaku CCB</h1>
-      </div>
+<!--============================  SVGS ==========================================================================-->
+
+          <!--===============home================-->
+            <svg class="svg">
+              <symbol id="icon-home" viewBox="0 0 32 32">
+                <path d="M32 19l-6-6v-9h-4v5l-6-6-16 16v1h4v10h10v-6h4v6h10v-10h4z"></path>
+              </symbol>
+            </svg>
+
+          <!--==============Plus==================-->
+            <svg class="svg-plus">
+              <symbol id="icon-plus" viewBox="0 0 32 32">
+                <path d="M31 12h-11v-11c0-0.552-0.448-1-1-1h-6c-0.552 0-1 0.448-1 1v11h-11c-0.552 0-1 0.448-1 1v6c0 0.552 0.448 1 1 1h11v11c0 0.552 0.448 1 1 1h6c0.552 0 1-0.448 1-1v-11h11c0.552 0 1-0.448 1-1v-6c0-0.552-0.448-1-1-1z"></path>
+            </symbol>
+           </svg>
+           <!--<svg class="plus-icon" alt="adiciona">
+                 <use xlink:href="#icon-plus"></use>
+              </svg>-->
+
+
+
+<!--============================================================================================================-->
+<!--============================  HEADER ======================================================================-->
+  <header class="">
+     
   </header>
-  <section class="box-login">
+  <!--============================  PRINCIPAL===================================================================-->
+  
+   
+   
+  
+  <section class="">
+ 
+    <nav class="nav-extended nav-header z-depth-2">   
+    <div class="nav-content">
+    <div class="row">
+      <ul class="tabs tabs-transparent" id="tabs-swipe-demo">
+        <li  class="tab">
+
+        <a id="navHome" class="active waves-effect nav-label" href="#home">HOME
+            
+            
+
+
+            <svg class="home-icon" alt="home">
+              <use xlink:href="#icon-home"></use>
+            </svg>
+         
+        </a>
+           
           
-      <div class="form-login row">
-        <form class="col s12">
+        </li>
+        <li class="tab" id="navEventos"><a class="waves-effect nav-label" href="#eventos" >Eventos</a></li>
+        <li class="tab"><a class="waves-effect nav-label" href="#amigos">Amigos</a></li>
+        <li class="tab"><a class="waves-effect nav-label" href="#conta">logar</a></li>
+      </ul>
+      </div>
+    </div>
+  </nav>
+<!--=========================================================================================================-->   
+<!--============================  Home  =====================================================================-->  
+<!--=========================================================================================================-->  
+
+        <div id="home" class=" conteudo-home">
+           <div class="home-wallpaper"><img src="img/wallpaper.jpg" id="img-wallpaper"></div>
+           <div class="home-front"> 
+            
+            <section class="data-box">
+              <div class="dia"></div> 
+              <div class="mesAno"></div>
+              <div class="diaExtenso"></div>
+            </section>
+             <p class="msg" id="msg"></p>   
+
+        <button class="btn-floating btn-large waves-effect waves-light green btn-debug " onclick="showTable();">^</button>
+        <button class="btn-floating btn-large waves-effect waves-light blue btn-limpa " onclick="limpa();">x</button>
+        <button class="btn-floating btn-large waves-effect waves-light red btn-drop " onclick="dropTable('ensaios');">!</button>
+
+        
+
+
+           </div>
+           
+        </div>
+<!--=========================================================================================================-->          
+<!--============================  Eventos ====================================================================--> 
+<!--=========================================================================================================-->        
+        <div id="eventos" class="col s12 conteudo">
+          
+           
+
+           <a href="#x" id ="cadastrar-evento" class="btn-floating btn-large waves-effect waves-light green btn-plus modal-trigger">+</a>
+
+          
+
+           <div id="x" class="modal modal-fixed-footer">
+            <div class="modal-content">
+              
+
+            
+        
+<!--============================  FORM PART I =====================================================================-->  
+          <div id="part1">
+
           <div class="row">
-            <div class="input-field col s12">
-                <input id="email" type="email" class="validate">
-                <label for="email" data-error="x" data-success="ok">Email</label>
-            </div>
-            <br>
-            <div class="camp-senha input-field col s12">
-                <input id="password" type="password" class="validate">
-                <label for="password">Senha</label>
+            <form class="col s12" method="post" onsubmit="continuar()">
+                  
+                  
+                    <select class="icons" id="tipoEnsaio">
+                      <option value="" disabled selected>Tipo de ensaio</option>
+                      <option value="tecnico" data-icon="img/avatar.png" class="circle">Técnico</option>
+                      <option value="local" data-icon="img/clave-sol.png" class="circle">Local</option>
+                      <option value="regional" data-icon="img/avatar.png" class="circle">Regional</option>
+                    </select>
+                  
+
+                  <div class="row">
+                    <div class="input-field col s12">
+                      <input id="cidade" type="text" class="validate" required>
+                      <label for="cidade">Cidade</label>
+                    </div>
+                  </div>
+                  
+                   <div class="row">
+                    <div class="input-field col s12">
+                      <input id="bairro" type="text" class="validate" required>
+                      <label for="bairro">Bairro</label>
+                    </div>
+                  </div>
+                <button class="valign-wrapper center-align waves-effect waves-light btn-flat cyan darken-4 btn-continuar">Continuar</button>
+                <!-- <button class="
+              modal-action modal-close valign-wrapper center-align waves-effect waves-light btn-flat red btn-cancelar" onclick="dropTable('ensaios');">Drop Tb</button> -->
+            </form>  
+          </div>    
+
+          </div>
+<!--============================  FORM PART II ====================================================================-->           
+          <div id="part2">
+
+            <div class="row">
+             <form class="col s12" method="post" onsubmit="cadastrar()">
+              
+              <input id="data" placeholder="Data" type="text" class="datepicker" required>
+              <div class="row">
+                    <div class="input-field col s6">
+                      <input  id="horario" type="number" class="validate" min="0" max="23" data-error="0-23" required>
+                      <label for="horario">Horas</label>
+                    </div>
+
+                    <div class="input-field col s6">
+                      <input  id="minutos" type="number" class="validate" min="0" max="59" data-error="0-59" required>
+                      <label for="minutos">Minutos</label>
+                    </div>
+               </div>
+               <button id="btnSalvar" class="valign-wrapper center-align waves-effect waves-light btn-flat cyan darken-4 btn-continuar">Salvar</button> 
+               <button class="
+              modal-action modal-close valign-wrapper center-align waves-effect waves-light btn-flat red btn-cancelar" onclick="cancelar();">Cancelar</button> 
+             
+             </form>  
             </div>
           </div>
-               <button class ="botao btn-entrar waves-effect waves-light" id="bto-entrar">Entrar</button>
-               <a href="" alt="botão cadastrar" id="bto-cadastrar">cadastra-se</a>
-        </form>
-      </div>
+<!--=======================================================================================================================-->     
 
+            </div>
+            <div class="modal-footer">
+                <ul class="tabs">
+                    <li id="li1" class="tab col s3 "><a id ="opcao1" class="active" href="#part1" data-toggle="opcao">1</a></li>
+                    <li id="li2" class="tab col s3 disabled"><a id ="opcao2" class="" href="#part2" data-toggle="opcao">2</a></li>
+                   
+                </ul>
+            </div>
+          </div>
+<!--=======================================================================================================================-->  
+<!--========================          FIM de moldais                                 ======================================-->  
+<!--=======================================================================================================================-->  
 
+<!--============================================ ÁREA de load ensaios =====================================================-->  
 
-          <!--
-           <form class="form-login"  onsubmit="">
-            <div id="msgErro" class="msgErro"></div>
+              <ul class="collection" id="colecao-eventos">
 
-               <div class="login">
-                  <input  id="email" type="email" placeholder="Usuário" autofocus required>
-                  <input  id="senha" type="password" placeholder="Senha"  maxlength="14" required>
-               </div>
-               <button class ="botao waves-effect waves-light" id="bto-entrar">Entrar</button>
-               <a href="" alt="botão cadastrar" id="bto-cadastrar">cadastra-se</a>
-            </form>-->
-  </section>
+                  
+                  
+              </ul>
 
+<!--=======================================================================================================================-->                
+        
+          <div id="informacao" class="modal">
+            <div class="modal-content">
+              <ul class="collection">
+                <li class="collection-item item-modal"><span id="spanLocal" class="span-text-black"></span>Local:</li>
+                <li class="collection-item item-modal"><span id="spanData" class="span-text-black"></span>Data:</li>
+                <li class="collection-item item-modal"><span id="spanHorario" class="span-text-black"></span>Horário:</li>
+                <li class="collection-item item-modal"><span id="spanTm" class="badge teal darken-4 span-text">4</span>Total músicos:</li>
+                <li class="collection-item item-modal"><span id="spanTo" class="badge teal darken-4 span-text">4</span>Total organistas:</li>
+              </ul>
+              
 
+            </div>
+            <div class="modal-footer">
+                
+                <a class="waves-effect waves-light btn btn-modal cyan darken-4 btnFont">Editar</a>                            
+                <a class="modal-action modal-close btn btn-modal red btnFont">Cancelar</a>
+                
+
+            </div>
+          </div>
+
+        </div>
+<!--=========================================================================================================-->          
+<!--============================  Amigos  ===================================================================-->  
+<!--=========================================================================================================-->         
+        <div id="amigos" class="col s12 conteudo">
+           Amigos
+        </div>
+<!--=========================================================================================================-->          
+<!--============================  Conta   ===================================================================-->  
+<!--=========================================================================================================-->        
+        <div id="conta" class="col s12 conteudo">
+            Conta
+        </div>
+<!--==========================================================================================================-->       
+  
+  </section>       
 </main>
 
        <!-- <script type="text/javascript" src="https://code.jquery.com/jquery-3.2.1.min.js"></script>-->
-       <!--<script src="cordova.js"></script>     (Arquivo js para utilização de comandos dos plugins)-->
+      <script src="cordova.js"></script>    <!-- (Arquivo js para utilização de comandos dos plugins)-->
       <script type="text/javascript" src="public/js/jquery-3.2.1.min.js"></script>	
       <script type="text/javascript" src="public/js/materialize.min.js"></script>	
+      <script type="text/javascript" src="js/material.js"></script>
+      
+      <script type="text/javascript" src="js/bd.js"></script>
+      <script type="text/javascript" src="js/index.js"></script>
 </body>
 </html>
