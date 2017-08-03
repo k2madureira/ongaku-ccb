@@ -197,37 +197,38 @@
 <!--=======================================================================================================================-->  
 
 <!--============================================ ÁREA de load ensaios =====================================================-->  
+                <div class="preloader-wrapper big active" id="carregando">
+                    <div class="spinner-layer spinner-blue-only">
+                      <div class="circle-clipper left">
+                        <div class="circle"></div>
+                      </div><div class="gap-patch">
+                        <div class="circle"></div>
+                      </div><div class="circle-clipper right">
+                        <div class="circle"></div>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="row box-informacao invisivel" id="infobox">
+                    <div class="col s12 m5">
+                      <div class="card-panel teal informacao-shadow">
+                        <span class="white-text">
+                           <div class="collection">
+                              <a href="#!" class="collection-item info-item"><span class="badge">1</span>Cidade:</a>
+                              <a href="#!" class="collection-item info-item"><span class="badge">1</span>Bairro:</a>
+                              <a href="#!" class="collection-item info-item"><span class="badge">1</span>Data:</a>
+                              <a href="#!" class="collection-item info-item"><span class="badge">1</span>Horário:</a>
+                              <a class="waves-effect waves-teal btn-flat center-align blue darken-1 info-button">Fechar</a>
+                          </div>
+                        </span>
+                      </div>
+                    </div>
+                  </div>
+
 
               <ul class="collection" id="colecao-eventos">
 
-            
-
-            <li class="collection-item"><!-- LI(1) -->
-                       <div class="card horizontal z-depth-3"> <!-- DIV(1) -->
-                        
-                          <div class="card-image"> <!-- DIV(1)(1) -->
-                            <img src="img/avatar.png">
-                          </div>
-                          
-                          <div class="card-stacked"><!-- DIV(1)(2) -->
-                            
-                              <div class="card-content"> <!-- DIV(1)(2)(1) -->
-                                <p class="" id="idensaio" style="display: none;"></p>
-                                <p class="" id="local">Ensaio Pioneiro</p>
-                                <p class="" id="data">Dia: 25/06/2018</p>
-                              </div>
-
-                              <div class="card-action"><!-- DIV(1)(2)(2) -->
-                                <a href="#informacao" class="modal-trigger item-color" >Informações</a>
-                              </div>
-
-                          </div>
-
-                      </div>
-                  </li>
-    
-
-                  
+                 
                   
               </ul>
 
@@ -244,6 +245,10 @@
               </ul>
               
 
+
+
+
+
             </div>
             <div class="modal-footer">
                 
@@ -253,6 +258,10 @@
 
             </div>
           </div>
+
+
+
+          
 
         </div>
 <!--=========================================================================================================-->          
@@ -277,8 +286,8 @@
       <script type="text/javascript" src="public/js/jquery-3.2.1.min.js"></script>	
       <script type="text/javascript" src="public/js/materialize.min.js"></script>	
       <script type="text/javascript" src="js/material.js"></script>
-      
-      <script type="text/javascript" src="js/bd.js"></script>
       <script type="text/javascript" src="js/index.js"></script>
+      <script type="text/javascript" src="js/bd.js"></script>
+     
 </body>
 </html>

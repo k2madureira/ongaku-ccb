@@ -107,6 +107,8 @@ function criaTable(){
     	
 }
 
+
+
 function montaEventos(){
 
 	var ul = document.querySelector("#colecao-eventos");
@@ -117,13 +119,68 @@ function montaEventos(){
 
 		for(let i =0; i< rs.rows.length; i++){
 		   
-		   li = montaLi(rs.rows.item(i));
-		   ul.appendChild(li);
+		   //li = montaLi(rs.rows.item(i));
+		   //ul.appendChild(li);
+
+		   var strTipo = String(rs.rows.item(i).tipo);
+
+
+			 	if(strTipo == 'tecnico'){
+			 		var img = 'img/clave-sol.png';
+			 	}
+			 	if(strTipo == 'local'){
+			 		var img = 'img/wallpaper.jpg';
+			 	}
+			 	if(strTipo == 'regional'){
+			 		var img = 'img/avatar.png';
+			 	}
+
+		   $("#colecao-eventos").append('<div class="card horizontal z-depth-3">' +
+		   								'<div class="card-image"> '+
+		   								' <img src="'+img+'">'+
+		   								'</div>'+
+		   								'<div class="card-stacked">'+
+		   								' <div class="card-content">'+
+		   								'<p class="" id="idensaio" style="display: none;">'+rs.rows.item(i).idensaio+'</p>'+
+		   								'<p class="" id="local">'+'Cidade: '+rs.rows.item(i).cidade+'</br>'+' Bairro:'+rs.rows.item(i).bairro+'</p>'+
+		   								'<p class="" id="data">Dia:'+rs.rows.item(i).data+'</p>'+
+		   								'</div>'+
+		   								' <div class="card-action">'+
+		   								'<a class= "item-color" id="info-ensaio" onclick="showboxinfo(1);">Informações</a>'+
+		   								'</div>'+
+		   								'</div>'+
+		   								' </div>'+
+		   								'</li>'
+		   								);
 	   }
 
 	});
 
 
+}
+
+function showboxinfo(id){
+
+	var div = document.querySelector("#infobox");
+	div.classList.remove("invisivel");
+	//$("#infobox").load(window.location.href + " #infobox" );
+
+	db = window.sqlitePlugin.openDatabase({name: 'DB', location: 'default'});
+	db.executeSql('SELECT * FROM ensaios', [], function(rs){
+
+		for(let i =0; i< rs.rows.length; i++){
+
+			if(rs.rows.item(i).idensaio == id){
+
+				
+			}
+		}
+
+	});
+
+	
+
+	
 }
  
 //=======================================DESTROÇOS=======================================

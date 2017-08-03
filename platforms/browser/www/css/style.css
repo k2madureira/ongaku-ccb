@@ -21,7 +21,15 @@ body {
      flex: 1 0 auto;
     /* background-image: url('/img/wallpaper.jpg');*/
  }
-
+.invisivel{
+	display: none;
+}
+.invisivel-2{
+	visibility: hidden;
+}
+.visivel{
+	display: none;
+}
 /*
 .container-main{
 	width: 100%;
@@ -268,6 +276,34 @@ body {
 }
 .picker__nav--prev{
 	left: -2rem !important;
+}
+
+.box-informacao{
+	width: 100% !important;
+	position: fixed !important;
+	margin-top: 20% !important;
+	z-index: 999;
+
+	
+}
+.informacao-shadow{
+	box-shadow: 0.5rem 1rem 3rem #000 ;
+	background-color: #081b27 !important;
+}
+.info-item{
+	border-bottom: 1px solid #42a5f5 !important;
+	font-family: 'Lato' !important;
+	color: #fff !important;
+}
+.info-button{
+	margin-top: 10% !important;
+	margin-left: 50% !important;
+	color: #fff !important;
+	font-family: 'Lato' !important;
+	font-size: 1rem !important;
+}
+.badge{
+	color: #fff !important;
 }
 
 

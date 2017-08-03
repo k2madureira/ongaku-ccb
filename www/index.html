@@ -192,55 +192,63 @@
                 </ul>
             </div>
           </div>
-<!--=======================================================================================================================-->  
-<!--========================          FIM de moldais                                 ======================================-->  
-<!--=======================================================================================================================-->  
+<!--=======================================================================================================================  
+                                       FIM de moldais      
+=======================================================================================================================-->  
 
-<!--============================================ ÁREA de load ensaios =====================================================-->  
 
+                <div class="preloader-wrapper big active" id="carregando">
+                    <div class="spinner-layer spinner-blue-only">
+                      <div class="circle-clipper left">
+                        <div class="circle"></div>
+                      </div><div class="gap-patch">
+                        <div class="circle"></div>
+                      </div><div class="circle-clipper right">
+                        <div class="circle"></div>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="row box-informacao invisivel" id="infobox">
+                    <div class="col s12 m5">
+                      <div class="card-panel teal informacao-shadow">
+                        <span class="white-text">
+                           <div class="collection">
+                              <a href="#!" class="collection-item info-item"><span id="infoci" class="badge"></span>Cidade:</a>
+                              <a href="#!" class="collection-item info-item"><span id="infoba" class="badge"></span>Bairro:</a>
+                              <a href="#!" class="collection-item info-item"><span id="infoda" class="badge"></span>Data:</a>
+                              <a href="#!" class="collection-item info-item"><span id="infoho" class="badge"></span>Horário:</a>
+                              <a class="waves-effect waves-teal btn-flat center-align blue darken-1 info-button" onclick="fecharinfo();">Fechar</a>
+                          </div>
+                        </span>
+                      </div>
+                    </div>
+                  </div>
+<!--=======================================================================================================================
+                                  área de carregamento de ensaios
+==========================================================================================================================-->
               <ul class="collection" id="colecao-eventos">
 
-                  
+                 
                   
               </ul>
 
-<!--=======================================================================================================================-->                
-        
-          <div id="informacao" class="modal">
-            <div class="modal-content">
-              <ul class="collection">
-                <li class="collection-item item-modal"><span id="spanLocal" class="span-text-black"></span>Local:</li>
-                <li class="collection-item item-modal"><span id="spanData" class="span-text-black"></span>Data:</li>
-                <li class="collection-item item-modal"><span id="spanHorario" class="span-text-black"></span>Horário:</li>
-                <li class="collection-item item-modal"><span id="spanTm" class="badge teal darken-4 span-text">4</span>Total músicos:</li>
-                <li class="collection-item item-modal"><span id="spanTo" class="badge teal darken-4 span-text">4</span>Total organistas:</li>
-              </ul>
-              
-
-            </div>
-            <div class="modal-footer">
-                
-                <a class="waves-effect waves-light btn btn-modal cyan darken-4 btnFont">Editar</a>                            
-                <a class="modal-action modal-close btn btn-modal red btnFont">Cancelar</a>
-                
-
-            </div>
-          </div>
+<!--=======================================================================================================================-->      
 
         </div>
-<!--=========================================================================================================-->          
-<!--============================  Amigos  ===================================================================-->  
-<!--=========================================================================================================-->         
+<!--==========================================================================================================================          
+                                        Amigos  
+===========================================================================================================================-->         
         <div id="amigos" class="col s12 conteudo">
            Amigos
         </div>
-<!--=========================================================================================================-->          
-<!--============================  Conta   ===================================================================-->  
-<!--=========================================================================================================-->        
+<!--=======================================================================================================================         
+                                          Conta  
+===========================================================================================================================-->        
         <div id="conta" class="col s12 conteudo">
             Conta
         </div>
-<!--==========================================================================================================-->       
+<!--=====================================================================================================================-->       
   
   </section>       
 </main>
@@ -250,8 +258,8 @@
       <script type="text/javascript" src="public/js/jquery-3.2.1.min.js"></script>	
       <script type="text/javascript" src="public/js/materialize.min.js"></script>	
       <script type="text/javascript" src="js/material.js"></script>
-      
-      <script type="text/javascript" src="js/bd.js"></script>
       <script type="text/javascript" src="js/index.js"></script>
+      <script type="text/javascript" src="js/bd.js"></script>
+     
 </body>
 </html>

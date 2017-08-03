@@ -34,6 +34,8 @@ var db; //variavel para banco de dados
 //===================================================================================================
     function onDeviceReady() {
 
+       // addEnsaios();
+
     	db = window.sqlitePlugin.openDatabase({name: 'DB', location: 'default'});
     		
     	db.executeSql(

@@ -31,28 +31,52 @@ var bairro;
  		campMA.textContent  = mes+'/'+ano;
  		campDE.textContent	= dia_Extenso;
 
+	
+ 		
+	
 	 $("#navEventos").click(function(){
-	 	
-	 	addEnsaios();
 	 	updateDiv();
-
+	 	
+	 	
 	 });
 
 	 $("#btnSalvar").click(function(){
 
 	 	var home =document.querySelector("#navHome");
-
+		
 	 	home.click();
-	 	  Materialize.toast('Ensaio adicionado', 4000);
+	 	
+	 	Materialize.toast('Ensaio adicionado', 4000);
 	 });
 
-
 	
- 		
+	
 
  });
+
+
+
  function updateDiv() { 
- 	$( "#colecao-eventos" ).load(window.location.href + " #colecao-eventos" ); 
+
+ 	var ul = document.querySelector("#colecao-eventos");
+ 	var infobox = document.querySelector("#infobox");
+ 	var load = document.querySelector("#carregando");
+ 	//$("#colecao-eventos").load(window.location.href + " #colecao-eventos" );
+
+ 	infobox.classList.add("invisivel");
+ 	load.classList.remove("invisivel");
+ 	$("#colecao-eventos").html("");
+
+ 	setTimeout(function(){
+ 		
+ 		load.classList.add("invisivel");
+ 		addEnsaios();
+ 		
+	}, 7000 );
+
+
+	//$("#colecao-eventos").html(""); 
+ 	
  } 
 
 
@@ -89,7 +113,7 @@ var bairro;
  	var data = $('#data').val();
  	var horas=$('#horario').val();
  	var minutos=$('#minutos').val();
-
+ 	var meses= ["Janeiro","Fevereiro","Março","Abril","Maio","Junho","Julho","Agosto","Setembro","Outubro","Novembro","Dezembro"];
 
  	var rgxMes = /[A-z][a-z]{1,8}/;
  	var rgxDia = /\d{2}/;
@@ -100,8 +124,23 @@ var bairro;
  	var vetAno = rgxAno.exec(data);
 
  	var Dia = String(vetDia);
- 	var Mes = String(vetMes[0]);
+ 	var Smes = String(vetMes[0]);
  	var Ano = String(vetAno[0]);
+
+ 	for(let i=0;i<12;i++){
+
+ 		if(Smes == meses[i]){
+ 			if(i==0){ 
+ 			  var Mes = String('0'+(i+1));	
+ 			}
+ 			if(i<=10){
+ 			  var Mes = String('0'+i);
+ 			}else{
+ 			  var Mes = String(i);
+ 			}
+ 		}
+
+ 	}
 
  	var fullData = Dia+'/'+Mes+'/'+Ano;
  	var fullHorario = horas+'h:'+minutos+'m';
@@ -138,10 +177,17 @@ var bairro;
 
 
  }
+ function fecharinfo(){
+ 	var infobox = document.querySelector("#infobox");
+
+ 	infobox.classList.add("invisivel");
+
+ }
 
  function limpa(){
 
  	document.getElementById("msg").innerHTML = '';
+
  }
 
  function addEnsaios(){
@@ -152,110 +198,4 @@ var bairro;
 
  }
 
- function montaLi(ensaio){
-
- 	
-
- 	var li = document.createElement("li");
- 	li.classList.add("collection-item");
-
- 	var div = document.createElement("div");
- 	div.classList.add("card", "horizontal" ,"z-depth-3");
-
- 	div.appendChild(Div1_1(ensaio.tipo));
- 	div.appendChild(Div1_2(ensaio));
-
- 	li.appendChild(div);
- 	return li;
-
- }
  
- function Div1_1(tipo){
-
- 	
-
- 	var div = document.createElement("div");
- 	div.classList.add("card-image");
-
- 	var img = document.createElement("img");
- 	
- 	var strTipo = String(tipo);
-
-
- 	if(strTipo == 'tecnico'){
- 		img.src = 'img/avatar.png';
- 	}
- 	if(strTipo == 'local'){
- 		img.src = 'img/avatar.png';
- 	}
- 	if(strTipo == 'regional'){
- 		img.src = 'img/avatar.png';
- 	}
- 	
- 	div.appendChild(img);
-
- 	return div;
-
- }
- function Div1_2(ensaio){
-
- 	
-
- 	var div = document.createElement("div");
- 	div.classList.add("card-stacked");
-
- 	div.appendChild(Div1_2_1(ensaio));
- 	div.appendChild(Div1_2_2(ensaio));
-
- 	return div;
-
- }
- function Div1_2_1(ensaio){
-
- 	
-
- 	let idensaio = String(ensaio.idensaio);
- 	let data = String(ensaio.data);
- 	let cidade = String(ensaio.cidade);
- 	let bairro = String(ensaio.bairro);
-
-
- 	var div = document.createElement("div");
- 	div.classList.add("card-content");
-
- 	var p1 = document.createElement("p");
- 	p1.classList.add("pcard");
- 	p1.style = 'display: none;';
- 	p1.textContent = idensaio;
-
- 	var p2 = document.createElement("p");
- 	p2.classList.add("pcard");
- 	p2.style = '';
- 	p2.textContent='Loca:'+cidade+' ('+bairro+')';
-
- 	var p3 = document.createElement("p");
- 	p3.classList.add("pcard");
- 	p3.style = '';
- 	p3.textContent='Data: '+data;
-
- 	div.appendChild(p1);
- 	div.appendChild(p2);
- 	div.appendChild(p3);
-
- 	return div;
-
- }
-  function Div1_2_2(ensaio){
-
-  	var div = document.createElement("div");
-  	div.classList.add("card-action");
-
-  	var a = document.createElement("a");
-  	a.classList.add("item-color");
-  	a.id='info-ensaio';
-  	a.textContent='Informações';
-
-  	div.appendChild(a);
-  	return div;
-
- }
