@@ -17,7 +17,7 @@
        under the License.
  */
 
-package ch.papers.test;
+package webhostapp.OngakuCCB;
 
 import android.os.Bundle;
 import org.apache.cordova.*;

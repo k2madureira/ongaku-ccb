@@ -30,8 +30,14 @@ var bairro;
  		campDia.textContent = dia;
  		campMA.textContent  = mes+'/'+ano;
  		campDE.textContent	= dia_Extenso;
-
-	
+	/*
+	 $('#enviar').on('click',function(){
+         $('#visualizar').html('<img src="ajax-loader.gif" alt="Enviando..."/> Enviando...');
+        // Efetua o Upload sem dar refresh na pagina           
+        $('#formulario').ajaxForm({
+            target:'#visualizar' // o callback será no elemento com o id #visualizar
+         }).submit();
+     });*/
  		
 	
 	 $("#navEventos").click(function(){
@@ -59,9 +65,11 @@ var bairro;
  function updateDiv() { 
 
  	var ul = document.querySelector("#colecao-eventos");
+ 	var infobox = document.querySelector("#infobox");
  	var load = document.querySelector("#carregando");
  	//$("#colecao-eventos").load(window.location.href + " #colecao-eventos" );
 
+ 	infobox.classList.add("invisivel");
  	load.classList.remove("invisivel");
  	$("#colecao-eventos").html("");
 
@@ -70,7 +78,7 @@ var bairro;
  		load.classList.add("invisivel");
  		addEnsaios();
  		
-	}, 7000 );
+	}, 2000 );
 
 
 	//$("#colecao-eventos").html(""); 
@@ -173,6 +181,12 @@ var bairro;
  	lia2.classList.remove('active');
  	lia1.click();
 
+
+ }
+ function fecharinfo(){
+ 	var infobox = document.querySelector("#infobox");
+
+ 	infobox.classList.add("invisivel");
 
  }
 

@@ -21,6 +21,14 @@ module.exports = [
         "clobbers": [
             "SQLitePlugin"
         ]
+    },
+    {
+        "file": "plugins/cordova-plugin-speechrecognition/www/speechRecognition.js",
+        "id": "cordova-plugin-speechrecognition.SpeechRecognition",
+        "pluginId": "cordova-plugin-speechrecognition",
+        "merges": [
+            "window.plugins.speechRecognition"
+        ]
     }
 ];
 module.exports.metadata = 
@@ -28,7 +36,8 @@ module.exports.metadata =
 {
     "cordova-plugin-whitelist": "1.3.2",
     "cordova-plugin-statusbar": "2.2.3",
-    "cordova-sqlite-storage": "2.0.4"
+    "cordova-sqlite-storage": "2.0.4",
+    "cordova-plugin-speechrecognition": "1.1.2"
 }
 // BOTTOM OF METADATA
 });

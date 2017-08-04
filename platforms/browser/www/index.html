@@ -15,7 +15,7 @@
    
     <!-- __________________ _____________ ____________________________________________________________________-->
     
-	<title>Two|C|one|B</title>
+	<title>Ongaku CCB</title>
 </head>
 <!--============================  BODY/MAIN ===== =============================================================-->
 <body onload= "onLoad()">
@@ -38,8 +38,19 @@
            <!--<svg class="plus-icon" alt="adiciona">
                  <use xlink:href="#icon-plus"></use>
               </svg>-->
-
-
+          <!--==============Menu==================-->    
+             <svg class="svg-menu"> 
+             <symbol id="icon-menu" viewBox="0 0 32 32">
+                <path d="M2 6h28v6h-28zM2 14h28v6h-28zM2 22h28v6h-28z"></path>
+             </symbol> 
+            </svg>
+          <!--============== SETA < Menu==================--> 
+            <svg class="svg-menu"> 
+            <symbol id="icon-circle-left" viewBox="0 0 32 32">
+              <path d="M16 32c8.837 0 16-7.163 16-16s-7.163-16-16-16-16 7.163-16 16 7.163 16 16 16zM16 3c7.18 0 13 5.82 13 13s-5.82 13-13 13-13-5.82-13-13 5.82-13 13-13z"></path>
+              <path d="M20.914 9.914l-2.829-2.829-8.914 8.914 8.914 8.914 2.828-2.828-6.086-6.086z"></path>
+            </symbol>
+            </svg>
 
 <!--============================================================================================================-->
 <!--============================  HEADER ======================================================================-->
@@ -72,8 +83,8 @@
            
           
         </li>
-        <li class="tab" id="navEventos"><a class="waves-effect nav-label" href="#eventos" >Eventos</a></li>
-        <li class="tab"><a class="waves-effect nav-label" href="#amigos">Amigos</a></li>
+        <li class="tab" id="navEventos"><a id="voiceEventos" class="waves-effect nav-label" href="#eventos" >Ensaios</a></li>
+        <li class="tab" ><a id="voiceAmigos" class="waves-effect nav-label" href="#amigos">Amigos</a></li>
         <li class="tab"><a class="waves-effect nav-label" href="#conta">logar</a></li>
       </ul>
       </div>
@@ -92,8 +103,12 @@
               <div class="mesAno"></div>
               <div class="diaExtenso"></div>
             </section>
-             <p class="msg" id="msg"></p>   
+             <p class="msg" id="msg">
+               
+               
+             </p>   
 
+        <button class="btn-floating btn-large waves-effect waves-light orenge btn-fala " onclick="escuta();">@</button>
         <button class="btn-floating btn-large waves-effect waves-light green btn-debug " onclick="showTable();">^</button>
         <button class="btn-floating btn-large waves-effect waves-light blue btn-limpa " onclick="limpa();">x</button>
         <button class="btn-floating btn-large waves-effect waves-light red btn-drop " onclick="dropTable('ensaios');">!</button>
@@ -192,11 +207,11 @@
                 </ul>
             </div>
           </div>
-<!--=======================================================================================================================-->  
-<!--========================          FIM de moldais                                 ======================================-->  
-<!--=======================================================================================================================-->  
+<!--=======================================================================================================================  
+                                       FIM de moldais      
+=======================================================================================================================-->  
 
-<!--============================================ ÁREA de load ensaios =====================================================-->  
+
                 <div class="preloader-wrapper big active" id="carregando">
                     <div class="spinner-layer spinner-blue-only">
                       <div class="circle-clipper left">
@@ -214,80 +229,96 @@
                       <div class="card-panel teal informacao-shadow">
                         <span class="white-text">
                            <div class="collection">
-                              <a href="#!" class="collection-item info-item"><span class="badge">1</span>Cidade:</a>
-                              <a href="#!" class="collection-item info-item"><span class="badge">1</span>Bairro:</a>
-                              <a href="#!" class="collection-item info-item"><span class="badge">1</span>Data:</a>
-                              <a href="#!" class="collection-item info-item"><span class="badge">1</span>Horário:</a>
-                              <a class="waves-effect waves-teal btn-flat center-align blue darken-1 info-button">Fechar</a>
+                              <a href="#!" class="collection-item info-item"><span id="infoti" class="badge"></span>Tipo:</a>
+                              <a href="#!" class="collection-item info-item"><span id="infoci" class="badge"></span>Cidade:</a>
+                              <a href="#!" class="collection-item info-item"><span id="infoba" class="badge"></span>Bairro:</a>
+                              <a href="#!" class="collection-item info-item"><span id="infoda" class="badge"></span>Data:</a>
+                              <a href="#!" class="collection-item info-item"><span id="infoho" class="badge"></span>Horário:</a>
+                              <a class="waves-effect waves-teal btn-flat center-align blue darken-1 info-button" onclick="fecharinfo();">Fechar</a>
                           </div>
                         </span>
                       </div>
                     </div>
                   </div>
-
-
+<!--=======================================================================================================================
+                                  área de carregamento de ensaios
+==========================================================================================================================-->
               <ul class="collection" id="colecao-eventos">
 
                  
                   
               </ul>
 
-<!--=======================================================================================================================-->                
-        
-          <div id="informacao" class="modal">
-            <div class="modal-content">
-              <ul class="collection">
-                <li class="collection-item item-modal"><span id="spanLocal" class="span-text-black"></span>Local:</li>
-                <li class="collection-item item-modal"><span id="spanData" class="span-text-black"></span>Data:</li>
-                <li class="collection-item item-modal"><span id="spanHorario" class="span-text-black"></span>Horário:</li>
-                <li class="collection-item item-modal"><span id="spanTm" class="badge teal darken-4 span-text">4</span>Total músicos:</li>
-                <li class="collection-item item-modal"><span id="spanTo" class="badge teal darken-4 span-text">4</span>Total organistas:</li>
-              </ul>
-              
-
-
-
-
-
-            </div>
-            <div class="modal-footer">
-                
-                <a class="waves-effect waves-light btn btn-modal cyan darken-4 btnFont">Editar</a>                            
-                <a class="modal-action modal-close btn btn-modal red btnFont">Cancelar</a>
-                
-
-            </div>
-          </div>
-
-
-
-          
+<!--=======================================================================================================================-->      
 
         </div>
-<!--=========================================================================================================-->          
-<!--============================  Amigos  ===================================================================-->  
-<!--=========================================================================================================-->         
+<!--==========================================================================================================================          
+                                        Amigos  
+===========================================================================================================================-->         
         <div id="amigos" class="col s12 conteudo">
            Amigos
         </div>
-<!--=========================================================================================================-->          
-<!--============================  Conta   ===================================================================-->  
-<!--=========================================================================================================-->        
-        <div id="conta" class="col s12 conteudo">
-            Conta
+<!--=======================================================================================================================         
+                                          Conta  
+===========================================================================================================================-->        
+        <div id="conta" class="col s12 conteudo-home">
+            
+
+          <ul id="slide-out" class="side-nav">
+            <li><div class="user-view">
+              <div class="background">
+                <img src="img/wallpaper.jpg">
+              </div>
+              <a href="#!user"><img class="circle valign-wrapper" src="img/avatar.png"></a>
+              <a class=" waves-effect waves-light btn-fecha-user " data-activates="slide-out">
+                <svg class="icon icon-circle-left"><use xlink:href="#icon-circle-left"></use></svg>
+              </a>
+              <a href="#!name"><span class="white-text name">John Doe</span></a>
+              <a href="#!email"><span class="white-text email">jdandturk@gmail.com</span></a>
+
+            </div></li>
+            <li><a href="#!"><i class="material-icons">cloud</i>First Link With Icon</a></li>
+            <li><a href="#!">Second Link</a></li>
+            <li><div class="divider"></div></li>
+            <li><a class="subheader">Subheader</a></li>
+            <li><a class="waves-effect" href="#!">Third Link With Waves</a></li>
+          </ul>
+          <ul class="collection">
+          <li class="collection-item config-item">
+              <a href="#" data-activates="slide-out" class="button-collapse">
+                <svg class="icon icon-menu">
+                <use xlink:href="#icon-menu"></use>
+                </svg>
+              </a>
+          </li>
+          </ul>
+
+
+
+
+
+
+
+
+
+
+
         </div>
-<!--==========================================================================================================-->       
+<!--=====================================================================================================================-->       
   
   </section>       
 </main>
 
        <!-- <script type="text/javascript" src="https://code.jquery.com/jquery-3.2.1.min.js"></script>-->
       <script src="cordova.js"></script>    <!-- (Arquivo js para utilização de comandos dos plugins)-->
-      <script type="text/javascript" src="public/js/jquery-3.2.1.min.js"></script>	
+      <script type="text/javascript" src="public/js/jquery-3.2.1.min.js"></script>
+      <script type="text/javascript" src="public/js/jquery.form.js"></script>	
       <script type="text/javascript" src="public/js/materialize.min.js"></script>	
       <script type="text/javascript" src="js/material.js"></script>
       <script type="text/javascript" src="js/index.js"></script>
       <script type="text/javascript" src="js/bd.js"></script>
+      <script type="text/javascript" src="js/speech.js"></script>
+     
      
 </body>
 </html>

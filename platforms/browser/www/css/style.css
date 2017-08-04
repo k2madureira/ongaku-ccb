@@ -190,25 +190,21 @@ body {
 	border:none !important;
 
 }
-.collection-item{
+.collection-item-evento{
 	background: transparent !important;
 	border:none !important;
 }
 
-
-
 .collection-modal{
 	border:1px solid #000 !important;
+}
+.config-item{
+	background: transparent !important;
+	border: 1px solid #bdbdbd !important;
 
 }
-.btn-modal{
-	/*width: 2rem !important;*/
-	/*height: 2rem !important; */
-	margin-left: 2% !important;
-}
-.item-modal{
-	border:1px solid #e0f7fa !important;
-}
+
+
 .item-color{
 	color: #00838f !important;
 }
@@ -236,10 +232,6 @@ body {
 	margin-top: -28rem;
 }
 
-.btnFont{
-	font-size: 0.5rem !important;
-	font-family: 'Lato' !important;
-}
 
 .picker__box{
 	width: 85% !important;
@@ -305,6 +297,10 @@ body {
 .badge{
 	color: #fff !important;
 }
+.side-nav{
+	height: 36.5rem !important;
+	margin-top: 14% !important;
+}
 
 
 /*=================================================================*/
@@ -334,6 +330,7 @@ body {
 	/*overflow-y: hidden;*/
 
 }
+
 
 .conteudo-home{
 	width: 100%;
@@ -400,6 +397,20 @@ body {
 	font-family: 'Lato' !important;
 	color: #fff !important;
 }
+.btn-fecha-user{
+	margin-top: -70%;
+	margin-left: 90%;	
+	width:2rem !important; 
+	height:2rem !important;
+	/*font-size: 0.5rem !important;*/
+	padding-top: 0.1em;	
+	position: relative;
+	
+}
+#carregando{
+	margin-top: 50% !important;
+	margin-left: 42% !important;
+}
 /*============================== SVG =============================*/
 
 .svg{
@@ -415,6 +426,13 @@ body {
 	display: none;
 	
 }
+.svg-menu{
+	width: 1px;
+	height: 1px;
+	display: none;
+
+}
+
 .icons-label{
 	font-size: 1rem;
 	color: #fff;
@@ -439,6 +457,25 @@ body {
 .home-icon:hover{
 	fill: #12f3f3;
 	
+}
+.icon-menu{
+  width: 1rem;
+  height: 1rem;
+  margin-left: 2%;
+  margin-top: 2%;
+  position: relative;
+  fill: #fff;
+}
+.icon-menu:hover{
+  fill: #12f3f3;
+}
+.icon-circle-left{
+  width: 1rem;
+  height: 1rem;
+  margin-left: 2%;
+  margin-top: 2%;
+  position: relative;
+  fill: #fff;
 }
 
 .plus-icon{
@@ -496,6 +533,16 @@ body {
 .nav-label{
 	font-size: 0.8rem !important;
 }
+.btn-fecha-user{
+	margin-top: -70%;
+	margin-left: 90%;	
+	width:2rem !important; 
+	height:2rem !important;
+	/*font-size: 0.5rem !important;*/
+	padding-top: 0.1em;	
+	position: relative;
+	
+}
 
 .btn-plus{
 	position: fixed;
@@ -529,6 +576,16 @@ body {
 	position: fixed;
 	margin-top: 75%;
 	margin-left: 35%;	
+	width:4.2rem !important; 
+	height:4.2rem !important;
+	font-size: 2rem !important;
+	padding-top: 0.1em;	
+
+}
+.btn-fala{
+	position: fixed;
+	margin-top: 75%;
+	margin-left: 15%;	
 	width:4.2rem !important; 
 	height:4.2rem !important;
 	font-size: 2rem !important;
@@ -573,6 +630,10 @@ body {
 .picker__box{
 	width: 100% !important;
 	height: 25rem !important;
+}
+.side-nav{
+	height: 36.7rem !important;
+	margin-top: 14% !important;
 }
 
 
@@ -626,7 +687,10 @@ body {
 	height: 25rem !important;
 }
 
-
+.side-nav{
+	height: 37.4rem !important;
+	margin-top: 14% !important;
+}
 
 
 }
@@ -691,6 +755,10 @@ body {
 	margin-top: 125%;
 	margin-left: 79%;
 	padding-top: 0.3rem;	
+}
+.side-nav{
+	height: 42rem !important;
+	margin-top: 14% !important;
 }
 
 }

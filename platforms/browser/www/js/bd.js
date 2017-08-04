@@ -36,15 +36,24 @@ function showTable(){
 	
 	var ensaio = [];
 	var text ='';
+	var inverso = [];
+	
 	
 	
 
 	db = window.sqlitePlugin.openDatabase({name: 'DB', location: 'default'});
 	db.executeSql('SELECT * FROM ensaios', [], function(rs){
 		
+		var aux =rs.rows.length-1;
+		for(var i =0; i<rs.rows.length; i++){
+					
+			inverso[i] = aux;
+			aux -=1;	
+		}
 
-		for(let i =0; i< rs.rows.length; i++){
-			text += "Id:"+rs.rows.item(i).idensaio+" "+"Cidade: "+rs.rows.item(i).cidade+"<br> ";
+
+		for(var i =0; i<rs.rows.length; i++){
+			text += 'key:'+i+" Id:"+rs.rows.item(inverso[i]).idensaio+" "+"Cidade: "+rs.rows.item(inverso[i]).cidade+"<br> ";
 			
 		}
 				
@@ -57,6 +66,8 @@ function showTable(){
 
 
 	});
+
+	db.closeDB();
 
 
 }
@@ -113,16 +124,29 @@ function montaEventos(){
 
 	var ul = document.querySelector("#colecao-eventos");
 	var li = '';
+	var inverso = [];
+
+
 	db = window.sqlitePlugin.openDatabase({name: 'DB', location: 'default'});
 	db.executeSql('SELECT * FROM ensaios', [], function(rs){
-		
+
+		/*____________________________________________________
+					Criando contagem com decremento
+		______________________________________________________*/
+		var aux =rs.rows.length-1;
+		for(var i =0; i<rs.rows.length; i++){
+					
+			inverso[i] = aux;
+			aux -=1;	
+		}
+		//______________________________________________________
 
 		for(let i =0; i< rs.rows.length; i++){
 		   
 		   //li = montaLi(rs.rows.item(i));
 		   //ul.appendChild(li);
 
-		   var strTipo = String(rs.rows.item(i).tipo);
+		   var strTipo = String(rs.rows.item(inverso[i]).tipo);
 
 
 			 	if(strTipo == 'tecnico'){
@@ -135,18 +159,19 @@ function montaEventos(){
 			 		var img = 'img/avatar.png';
 			 	}
 
-		   $("#colecao-eventos").append('<div class="card horizontal z-depth-3">' +
+		   $("#colecao-eventos").append('<li class="collection-item-evento">'+
+		   								'<div class="card horizontal z-depth-3">' +
 		   								'<div class="card-image"> '+
 		   								' <img src="'+img+'">'+
 		   								'</div>'+
 		   								'<div class="card-stacked">'+
-		   								' <div class="card-content">'+
-		   								'<p class="" id="idensaio" style="display: none;">'+rs.rows.item(i).idensaio+'</p>'+
-		   								'<p class="" id="local">'+'Cidade: '+rs.rows.item(i).cidade+'</br>'+' Bairro:'+rs.rows.item(i).bairro+'</p>'+
-		   								'<p class="" id="data">Dia:'+rs.rows.item(i).data+'</p>'+
+		   								'<div class="card-content">'+
+		   								'<p class="" id="idensaio" style="display: none;">'+rs.rows.item(inverso[i]).idensaio+'</p>'+
+		   								'<p class="" id="local">'+'Tipo: '+rs.rows.item(inverso[i]).tipo+'</br>'+' Cidade: '+rs.rows.item(inverso[i]).cidade+'</p>'+
+		   								'<p class="" id="data">Dia:'+rs.rows.item(inverso[i]).data+'</p>'+
 		   								'</div>'+
 		   								' <div class="card-action">'+
-		   								'<a class= "item-color" id="info-ensaio" onclick="showboxinfo(1);">Informações</a>'+
+		   								'<a class= "item-color" id="info-ensaio" onclick="showboxinfo('+rs.rows.item(inverso[i]).idensaio+');">Informações</a>'+
 		   								'</div>'+
 		   								'</div>'+
 		   								' </div>'+
@@ -163,7 +188,7 @@ function showboxinfo(id){
 
 	var div = document.querySelector("#infobox");
 	div.classList.remove("invisivel");
-	//$("#infobox").load(window.location.href + " #infobox" );
+	
 
 	db = window.sqlitePlugin.openDatabase({name: 'DB', location: 'default'});
 	db.executeSql('SELECT * FROM ensaios', [], function(rs){
@@ -171,7 +196,11 @@ function showboxinfo(id){
 		for(let i =0; i< rs.rows.length; i++){
 
 			if(rs.rows.item(i).idensaio == id){
-
+				$("#infoti").html(String(rs.rows.item(i).tipo));
+				$("#infoci").html(String(rs.rows.item(i).cidade));
+				$("#infoba").html(String(rs.rows.item(i).bairro));
+				$("#infoda").html(String(rs.rows.item(i).data));
+				$("#infoho").html(String(rs.rows.item(i).horario));	
 				
 			}
 		}
@@ -181,6 +210,14 @@ function showboxinfo(id){
 	
 
 	
+}
+
+function closeDB() {
+    db.close(function () {
+        console.log("DB closed!");
+    }, function (error) {
+        console.log("Error closing DB:" + error.message);
+    });
 }
  
 //=======================================DESTROÇOS=======================================

@@ -10,7 +10,8 @@ var db; //variavel para banco de dados
         $('.tap-target').tapTarget('open'); // opções abir e fechar do modal
         $('.tap-target').tapTarget('close');
         $('select').material_select(); // ativando select do form
-        
+        $(".button-collapse").sideNav();//Side menu
+        $('.tooltipped').tooltip({delay: 50});
 
         $('.datepicker').pickadate({
             selectMonths: true, // cria o dropdown de controle de meses
@@ -20,6 +21,15 @@ var db; //variavel para banco de dados
             close: 'Ok',
             closeOnSelect: false // Close upon selecting a date,
           });
+
+        $('.button-collapse').sideNav({
+          menuWidth: 250, // Default is 300
+          edge: 'left', // Choose the horizontal origin
+          closeOnClick: true, // Closes side-nav on <a> clicks, useful for Angular/Meteor
+          draggable: true, // Choose whether you can drag to open on touch screens,
+          onOpen: function(el) {}
+        
+        });
  		
       
 

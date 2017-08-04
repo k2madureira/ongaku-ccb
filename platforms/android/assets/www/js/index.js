@@ -30,8 +30,14 @@ var bairro;
  		campDia.textContent = dia;
  		campMA.textContent  = mes+'/'+ano;
  		campDE.textContent	= dia_Extenso;
-
-	
+	/*
+	 $('#enviar').on('click',function(){
+         $('#visualizar').html('<img src="ajax-loader.gif" alt="Enviando..."/> Enviando...');
+        // Efetua o Upload sem dar refresh na pagina           
+        $('#formulario').ajaxForm({
+            target:'#visualizar' // o callback será no elemento com o id #visualizar
+         }).submit();
+     });*/
  		
 	
 	 $("#navEventos").click(function(){
@@ -72,7 +78,7 @@ var bairro;
  		load.classList.add("invisivel");
  		addEnsaios();
  		
-	}, 7000 );
+	}, 2000 );
 
 
 	//$("#colecao-eventos").html(""); 
