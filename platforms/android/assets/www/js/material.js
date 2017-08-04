@@ -49,9 +49,27 @@ var db; //variavel para banco de dados
     	db = window.sqlitePlugin.openDatabase({name: 'DB', location: 'default'});
     		
     	db.executeSql(
+        'CREATE TABLE IF NOT EXISTS login (idlogin INTEGER PRIMARY KEY AUTOINCREMENT, login INTEGER)'
+  
+      );
+
+      db.executeSql(
+        'CREATE TABLE IF NOT EXISTS config (idconfig INTEGER PRIMARY KEY AUTOINCREMENT, wallpaper TEXT NOT NULL, clave TEXT NOT NULL)'
+  
+      );
+
+
+      db.executeSql(
+        'CREATE TABLE IF NOT EXISTS usuario (iduser INTEGER PRIMARY KEY AUTOINCREMENT, nome TEXT NOT NULL, cargo TEXT NOT NULL, foto TEXT NOT NULL)'
+  
+      );
+
+
+      db.executeSql(
 		    'CREATE TABLE IF NOT EXISTS ensaios (idensaio INTEGER PRIMARY KEY AUTOINCREMENT, tipo TEXT NOT NULL, cidade TEXT NOT NULL, bairro TEXT NOT NULL, data TEXT NOT NULL, horario TEXT NOT NULL, tmusicos INTEGER, torganistas INTEGER)'
 	
 		  );
+
     	
   		  
 		   
