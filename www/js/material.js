@@ -12,6 +12,8 @@ var db; //variavel para banco de dados
         $('select').material_select(); // ativando select do form
         $(".button-collapse").sideNav();//Side menu
         $('.tooltipped').tooltip({delay: 50});
+        $('.tooltipped').tooltip('remove');
+
 
         $('.datepicker').pickadate({
             selectMonths: true, // cria o dropdown de controle de meses
@@ -52,12 +54,19 @@ var db; //variavel para banco de dados
         'CREATE TABLE IF NOT EXISTS login (idlogin INTEGER PRIMARY KEY AUTOINCREMENT, login INTEGER)'
   
       );
-
       db.executeSql(
-        'CREATE TABLE IF NOT EXISTS config (idconfig INTEGER PRIMARY KEY AUTOINCREMENT, wallpaper TEXT NOT NULL, clave TEXT NOT NULL)'
+        'CREATE TABLE IF NOT EXISTS config (idconfig INTEGER PRIMARY KEY AUTOINCREMENT, wallpaper TEXT, clave TEXT)'
+  
+      );  
+      
+      db.executeSql(
+        'CREATE TABLE IF NOT EXISTS wallpaper (idwallpaper INTEGER PRIMARY KEY AUTOINCREMENT, wallpaper TEXT NOT NULL)'
   
       );
-
+      db.executeSql(
+        'CREATE TABLE IF NOT EXISTS clave (idclave INTEGER PRIMARY KEY AUTOINCREMENT, clave TEXT NOT NULL)'
+  
+      );
 
       db.executeSql(
         'CREATE TABLE IF NOT EXISTS usuario (iduser INTEGER PRIMARY KEY AUTOINCREMENT, nome TEXT NOT NULL, cargo TEXT NOT NULL, foto TEXT NOT NULL)'
@@ -70,10 +79,26 @@ var db; //variavel para banco de dados
 	
 		  );
 
-    	
+    	db.executeSql('SELECT * FROM config', [], function(rs){
+
+        if (rs.rows.length==0){
+          db.executeSql('INSERT INTO wallpaper (wallpaper) VALUES (?)', ['img/wallpaper1.png']);
+          db.executeSql('INSERT INTO wallpaper (wallpaper) VALUES (?)', ['img/wallpaper2.png']);
+          db.executeSql('INSERT INTO wallpaper (wallpaper) VALUES (?)', ['img/wallpaper3.png']);
+
+          db.executeSql('INSERT INTO clave (clave) VALUES (?)', ['img/clave1.png']);
+          db.executeSql('INSERT INTO clave (clave) VALUES (?)', ['img/clave2.png']);
+          db.executeSql('INSERT INTO clave (clave) VALUES (?)', ['img/clave3.png']);
+
+           db.executeSql('INSERT INTO config (wallpaper) VALUES (?)', ['img/wallpaper1.jpg']);
+
+        }
+
+
+      });
   		  
 		   
-
+        loadWallpaper();
         document.addEventListener("pause", onPause, false);
         document.addEventListener("resume", onResume, false);
         document.addEventListener("menubutton", onMenuKeyDown, false);

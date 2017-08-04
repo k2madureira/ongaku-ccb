@@ -200,7 +200,8 @@ body {
 }
 .config-item{
 	background: transparent !important;
-	border: 1px solid #bdbdbd !important;
+	border: transparent !important;
+	/*border-top: 1px solid #12f3f3 !important;*/
 
 }
 
@@ -274,15 +275,22 @@ body {
 	width: 100% !important;
 	position: fixed !important;
 	margin-top: 20% !important;
+	z-index: 999;	
+}
+.box-help{
+	width: 100% !important;
+	position: fixed !important;
+	margin-top: -15% !important;
+	font-family: 'Lato' !important;
+	font-size: 0.8rem !important;
 	z-index: 999;
-
-	
 }
 .informacao-shadow{
 	box-shadow: 0.5rem 1rem 3rem #000 ;
 	background-color: #081b27 !important;
 }
 .info-item{
+	background: transparent !important;
 	border-bottom: 1px solid #42a5f5 !important;
 	font-family: 'Lato' !important;
 	color: #fff !important;
@@ -445,9 +453,9 @@ body {
 }
 
 .home-icon {
-  width: 0.8rem;
-  height: 0.8rem;
-  margin-left: -100%;
+  width: 1rem;
+  height: 1rem;
+  margin-left: 0%;
   margin-bottom: 0%;
   position: relative;
   fill: #fff;
@@ -457,6 +465,42 @@ body {
 .home-icon:hover{
 	fill: #12f3f3;
 	
+}
+.icon-cog{
+  width: 1rem;
+  height: 1rem;
+  margin-left: 0%;
+  margin-bottom: 0%;
+  position: relative;
+  fill: #fff;
+
+}
+.icon-cog:hover{
+	fill: #12f3f3;
+	
+}
+.icon-folder-open{
+  width: 1rem;
+  height: 1rem;
+  margin-left: 0%;
+  margin-bottom: 0%;
+  position: relative;
+  fill: #fff;
+}
+.icon-folder-open:hover{
+	fill: #12f3f3;
+	
+}
+.icon-users{
+  width: 1rem;
+  height: 1rem;
+  margin-left: 0%;
+  margin-bottom: 0%;
+  position: relative;
+  fill: #fff;
+}
+.icon-users:hover{
+  fill: #12f3f3;	
 }
 .icon-menu{
   width: 1rem;
@@ -470,12 +514,26 @@ body {
   fill: #12f3f3;
 }
 .icon-circle-left{
-  width: 1rem;
-  height: 1rem;
+  width: 1.5rem;
+  height: 1.5rem;
   margin-left: 2%;
   margin-top: 2%;
   position: relative;
   fill: #fff;
+}
+
+.icon-help{
+
+  width: 1.1rem;
+  height: 1.1rem;
+  margin-left: 89%;
+  margin-top: 29%;
+  position: fixed;
+  fill: #fff;
+
+}
+.icon-help:hover{
+  fill: #12f3f3;
 }
 
 .plus-icon{
@@ -520,16 +578,7 @@ body {
 	margin-left: 65%;
 }	
 
-.home-icon {
-  width: 0.8rem;
-  height: 0.8rem;
-  margin-left: -100%;
-  margin-bottom: 0%;
-  position: relative;
-  fill: #fff;
 
-
-}
 .nav-label{
 	font-size: 0.8rem !important;
 }
@@ -635,7 +684,14 @@ body {
 	height: 36.7rem !important;
 	margin-top: 14% !important;
 }
-
+.box-help{
+	width: 100% !important;
+	position: fixed !important;
+	margin-top: -20% !important;
+	font-family: 'Lato' !important;
+	font-size: 1rem !important;
+	z-index: 999;	
+}
 
 
 }
@@ -674,6 +730,19 @@ body {
 	opacity: 0.6;*/
 	border-radius: 50%; 
  	box-shadow: 1rem 1rem 3rem #000 ;
+}
+.icon-help{
+
+  width: 1.1rem;
+  height: 1.1rem;
+  margin-left: 92%;
+  margin-top: 29%;
+  position: fixed;
+  fill: #fff;
+
+}
+.icon-help:hover{
+  fill: #12f3f3;
 }
 
 .btn-plus{
@@ -748,6 +817,19 @@ body {
 	font-family: 'Lato';
 	font-size: 1rem;
 	font-weight: 400;
+}
+.icon-help{
+
+  width: 1.1rem;
+  height: 1.1rem;
+  margin-left: 93%;
+  margin-top: 30%;
+  position: fixed;
+  fill: #fff;
+
+}
+.icon-help:hover{
+  fill: #12f3f3;
 }
 
 .btn-plus{

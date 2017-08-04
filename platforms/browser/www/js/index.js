@@ -55,6 +55,13 @@ var bairro;
 	 	Materialize.toast('Ensaio adicionado', 4000);
 	 });
 
+	 $("#icon-help-box").click(function(){
+	 	
+	 	var div = document.querySelector("#helpbox");
+		div.classList.remove("invisivel");
+
+
+	 });
 	
 	
 
@@ -187,6 +194,12 @@ var bairro;
  	var infobox = document.querySelector("#infobox");
 
  	infobox.classList.add("invisivel");
+
+ }
+ function fecharhelp(){
+ 	var helpbox = document.querySelector("#helpbox");
+
+ 	helpbox.classList.add("invisivel");
 
  }
 
