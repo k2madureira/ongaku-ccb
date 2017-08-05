@@ -55,7 +55,7 @@ var db; //variavel para banco de dados
   
       );
       db.executeSql(
-        'CREATE TABLE IF NOT EXISTS config (idconfig INTEGER PRIMARY KEY AUTOINCREMENT, wallpaper TEXT NOT NULL, clave TEXT NOT NULL)'
+        'CREATE TABLE IF NOT EXISTS config (idconfig INTEGER PRIMARY KEY AUTOINCREMENT, wallpaper TEXT, clave TEXT)'
   
       );  
       
@@ -79,9 +79,9 @@ var db; //variavel para banco de dados
 	
 		  );
 
-    	db.executeSql('SELECT * FROM login', [], function(rs){
+    	db.executeSql('SELECT * FROM config', [], function(rs){
 
-        if (!rs.rows.item(0)){
+        if (rs.rows.length==0){
           db.executeSql('INSERT INTO wallpaper (wallpaper) VALUES (?)', ['img/wallpaper1.png']);
           db.executeSql('INSERT INTO wallpaper (wallpaper) VALUES (?)', ['img/wallpaper2.png']);
           db.executeSql('INSERT INTO wallpaper (wallpaper) VALUES (?)', ['img/wallpaper3.png']);
@@ -90,13 +90,15 @@ var db; //variavel para banco de dados
           db.executeSql('INSERT INTO clave (clave) VALUES (?)', ['img/clave2.png']);
           db.executeSql('INSERT INTO clave (clave) VALUES (?)', ['img/clave3.png']);
 
+           db.executeSql('INSERT INTO config (wallpaper) VALUES (?)', ['img/wallpaper1.jpg']);
+
         }
 
 
       });
   		  
 		   
-
+        loadWallpaper();
         document.addEventListener("pause", onPause, false);
         document.addEventListener("resume", onResume, false);
         document.addEventListener("menubutton", onMenuKeyDown, false);

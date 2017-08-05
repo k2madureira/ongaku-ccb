@@ -143,7 +143,7 @@
 <!--=========================================================================================================-->  
 
         <div id="home" class=" conteudo-home">
-           <div class="home-wallpaper"><img src="img/wallpaper1.jpg" id="img-wallpaper"></div>
+           <div class="home-wallpaper"><img id="img-wallpaper"></div>
            <div class="home-front"> 
              
              <svg class="icon icon-help"  id="icon-help-box"><use xlink:href="#icon-help"></use></svg>
@@ -337,27 +337,116 @@
           <ul id="slide-out" class="side-nav">
             <li><div class="user-view">
               <div class="background">
-                <img src="img/wallpaper.jpg">
+                <img src="img/loginback.jpg">
               </div>
-              <a href="#!user"><img class="circle valign-wrapper" src="img/avatar.png"></a>
+              <a href="#!user"><img class="circle valign-wrapper" src="img/avatarUser.jpg"></a>
               <a class=" waves-effect waves-light btn-fecha-user " data-activates="slide-out">
                 <svg class="icon icon-circle-left"><use xlink:href="#icon-circle-left"></use></svg>
               </a>
-              <a href="#!name"><span class="white-text name">John Doe</span></a>
-              <a href="#!email"><span class="white-text email">jdandturk@gmail.com</span></a>
+              <a><span class="white-text name" id="login-nome"></span></a>
+              <a><span class="white-text" id="login-cargo"></span></a>
 
             </div></li>
-            <li><a href="#!"><i class="material-icons">cloud</i>First Link With Icon</a></li>
-            <li><a href="#!">Second Link</a></li>
+            <li class="" id="li-resposta"><a id="resposta-server"></a></li>
             <li><div class="divider"></div></li>
-            <li><a class="subheader">Subheader</a></li>
-            <li><a class="waves-effect" href="#!">Third Link With Waves</a></li>
+
+            <div id="form-login " class="">
+                <form class="col s12" method="post" onsubmit="">
+                  
+                  <div class="row">
+                    <div class="input-field col s10" id="inputLogin">
+                      <input id="email" type="email" class="validate" required>
+                      <label for="email">Email:</label>
+                    </div>
+                  </div>
+                  
+                   <div class="row">
+                    <div class="input-field col s10" id="inputLogin">
+                      <input id="senha" type="password" class="validate" required>
+                      <label for="senha">Senha:</label>
+                    </div>
+                  </div>
+                <button class="valign-wrapper center-align waves-effect waves-light btn-flat cyan darken-4 btn-logar ">Logar</button>
+          
+               </form>  
+            </div>
+
+            <div id="form-cadastro" class="invisivel">
+                <form class="col s12" method="post" onsubmit="">
+                  
+                  <div class="row">
+                    <div class="input-field col s10" id="inputLogin">
+                      <input id="nome" type="text" class="validate" required>
+                      <label for="nome">Nome:</label>
+                    </div>
+                  </div>
+
+                  <div class="row">
+                    <div class="input-field col s10" id="inputLogin">
+                      <input id="sobrenome" type="text" class="validate" required>
+                      <label for="sobrenome">Sobrenome:</label>
+                    </div>
+                  </div>
+
+                   <div class="row">
+                    <div class="input-field col s10" id="inputLogin">
+                      <input id="email" type="email" class="validate" required>
+                      <label for="email">Email:</label>
+                    </div>
+                  </div>
+                  
+                   <div class="row">
+                    <div class="input-field col s10">
+                      <input id="senha" type="password" class="validate" required>
+                      <label for="senha">Senha:</label>
+                    </div>
+                  </div>
+
+                  <div class="row">
+                    <div class="input-field col s10">
+                      <input id="senha" type="password" class="validate" required>
+                      <label for="senha">Confirmação de senha:</label>
+                    </div>
+                  </div>
+
+                  <div class="row">
+                    <div class="input-field col s10" id="inputLogin">
+                      <input id="cidade" type="text" class="validate" required>
+                      <label for="cidade">Cidade:</label>
+                    </div>
+                  </div>
+
+                  <div class="row">
+                    <div class="input-field col s10" id="inputLogin">
+                      <input id="comum" type="text" class="validate" required>
+                      <label for="comum">Comum:</label>
+                    </div>
+                  </div>
+
+                  <div class="row">
+                    <div class="input-field col s10" id="inputLogin">
+                      <input id="cargo" type="text" class="validate" required>
+                      <label for="cargo">Cargo:</label>
+                    </div>
+                  </div>
+
+
+                 
+                <button class="valign-wrapper center-align waves-effect waves-light btn-flat cyan darken-4 btn-logar">Cadastrar</button>
+          
+               </form>  
+
+              
+            </div>  
+
           </ul>
+
+
           <ul class="collection">
           <li class="collection-item config-item">
               <a href="#" data-activates="slide-out" class="button-collapse">
-                <svg class="icon icon-menu">
-                <use xlink:href="#icon-menu"></use>
+                <svg class="icon icon-menu" id="login-conexao">
+                    <use xlink:href="#icon-menu"></use>
                 </svg>
               </a>
           </li>

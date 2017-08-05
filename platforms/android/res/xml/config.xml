@@ -21,7 +21,7 @@
     <author email="lenilsonmadureira@gmail.com" href="">
         Lenilson Madureira
     </author>
-    <access origin="" />
+    <access origin="*" />
     <icon density="ldpi" src="res/icon/android/icon-l.png" />
     <icon density="mdpi" src="res/icon/android/icon-m.png" />
     <icon density="hdpi" src="res/icon/android/icon-h.png" />

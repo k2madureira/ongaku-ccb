@@ -14,6 +14,7 @@ var bairro;
 
 
 
+
  $( document ).ready(function() {
 
  		var data = new Date();
@@ -38,6 +39,7 @@ var bairro;
             target:'#visualizar' // o callback será no elemento com o id #visualizar
          }).submit();
      });*/
+
  		
 	
 	 $("#navEventos").click(function(){
@@ -60,6 +62,12 @@ var bairro;
 	 	var div = document.querySelector("#helpbox");
 		div.classList.remove("invisivel");
 
+
+	 });
+
+	 $("#login-conexao").click(function(){
+
+	 	 testaConexao();
 
 	 });
 	
@@ -217,4 +225,40 @@ var bairro;
 
  }
 
- 
+ function testaConexao(){
+ 	var pacote = 'ok';
+ 	
+ 	var x = 'ola';
+
+ 	$.ajax({
+			type:"POST",
+			dataType: "json",
+			data:{pacote:pacote},
+			url:"https://twoconeb.000webhostapp.com/projetos/ongakuCcb/bd/testaConexao.php",
+			success:function(data){
+				
+				if(data){
+					
+					msgConexao(data);
+
+				}
+				
+			}
+		});
+ 	
+ }
+function msgConexao(resposta){
+
+	var campResposta = document.querySelector("#resposta-server");
+	var liResposta = document.querySelector("#li-resposta");
+
+	            if(resposta == 'ok'){
+					campResposta.textContent = 'Servidor on.';
+					liResposta.classList.add("green");
+
+				}else{
+					campResposta.textContent = 'Servidor off.';
+					liResposta.classList.add("red");
+				}
+
+}

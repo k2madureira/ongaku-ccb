@@ -67,7 +67,7 @@ function showTable(){
 
 	});
 
-	db.closeDB();
+	
 
 
 }
@@ -110,11 +110,12 @@ function buscaEventos(){
 function criaTable(){
 
 		db = window.sqlitePlugin.openDatabase({name: 'DB', location: 'default'});
-    		
+    	
     	db.executeSql(
 		    'CREATE TABLE IF NOT EXISTS ensaios (idensaio INTEGER PRIMARY KEY AUTOINCREMENT, tipo TEXT NOT NULL, cidade TEXT NOT NULL, bairro TEXT NOT NULL, data TEXT NOT NULL, horario TEXT NOT NULL, tmusicos INTEGER, torganistas INTEGER)'
 	
 		  );
+    	   
     	
 }
 
@@ -210,6 +211,26 @@ function showboxinfo(id){
 	
 
 	
+}
+function loadWallpaper(){
+
+	var wallpaper = document.querySelector("#img-wallpaper");
+
+
+	db = window.sqlitePlugin.openDatabase({name: 'DB', location: 'default'});
+	db.executeSql('SELECT * FROM config', [], function(rs){
+
+		wallpaper.src = String(rs.rows.item(0).wallpaper);
+
+
+
+	});
+}
+
+function updateWallpaper(id){
+
+
+
 }
 
 function closeDB() {

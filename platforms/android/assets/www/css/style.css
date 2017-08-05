@@ -310,6 +310,17 @@ body {
 	margin-top: 14% !important;
 }
 
+#inputLogin input[type=email],
+input[type=password],
+input[type=text]{
+	margin-bottom: 0rem !important;
+	height: 2rem !important;
+	width:  100% !important;
+	margin-left: 10% !important;
+}
+#inputLogin label{
+	margin-left: 10% !important;
+}
 
 /*=================================================================*/
 
@@ -395,6 +406,15 @@ body {
 	font-size: 0.8rem !important;
 	font-family: 'Lato' !important;
 	color: #fff !important;
+}
+.btn-logar{
+	width: 80% !important;
+	height: 2rem !important;
+	margin-left: 10% !important;
+	font-size: 0.8rem !important;
+	font-family: 'Lato' !important;
+	color: #fff !important
+
 }
 
 .btn-cancelar{

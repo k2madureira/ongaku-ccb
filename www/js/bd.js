@@ -42,7 +42,7 @@ function showTable(){
 	
 
 	db = window.sqlitePlugin.openDatabase({name: 'DB', location: 'default'});
-	db.executeSql('SELECT * FROM config', [], function(rs){
+	db.executeSql('SELECT * FROM ensaios', [], function(rs){
 		
 		var aux =rs.rows.length-1;
 		for(var i =0; i<rs.rows.length; i++){
@@ -53,7 +53,7 @@ function showTable(){
 
 
 		for(var i =0; i<rs.rows.length; i++){
-			text += 'key:'+i+" Id:"+rs.rows.item(inverso[i]).idconfig+" "+"Cidade: "+rs.rows.item(inverso[i]).wallpaper+"<br> ";
+			text += 'key:'+i+" Id:"+rs.rows.item(inverso[i]).idensaio+" "+"Cidade: "+rs.rows.item(inverso[i]).cidade+"<br> ";
 			
 		}
 				
@@ -67,7 +67,7 @@ function showTable(){
 
 	});
 
-	db.closeDB();
+	
 
 
 }
