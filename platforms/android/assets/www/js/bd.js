@@ -57,10 +57,6 @@ function showTable(){
 			
 		}
 				
-
-		/*text += "Id:"+rs.rows.item(0).idensaio+" "+"Cidade: "+rs.rows.item(0).cidade+"<br> ";
-		text += "Id:"+rs.rows.item(1).idensaio+" "+"Cidade: "+rs.rows.item(1).cidade+"<br> ";
-		text += "Id:"+rs.rows.item(2).idensaio+" "+"Cidade: "+rs.rows.item(2).cidade+"<br> ";*/
 		text += "Quantidade de eventos: "+rs.rows.length+"<br>";
 		document.getElementById("msg").innerHTML = text;
 

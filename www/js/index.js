@@ -70,7 +70,43 @@ var bairro;
 	 	 testaConexao();
 
 	 });
-	
+
+	$("#cadastrese").click(function(){
+
+
+		var formLogin = document.querySelector("#form-login");
+		var formCadastro = document.querySelector("#form-cadastro");
+		
+		formLogin.classList.add("invisivel");
+		formCadastro.classList.remove("invisivel");
+
+		
+	});
+
+	$("#cancelar-cadastro").click(function(){
+
+		var formLogin = document.querySelector("#form-login");
+		var formCadastro = document.querySelector("#form-cadastro");
+		
+		formLogin.classList.remove("invisivel");
+		formCadastro.classList.add("invisivel");
+
+		$("#nome").val('');
+		$("#sobrenome").val('');
+		$("#emailcadastro").val('');
+		$("#senhacadastro").val('');
+		$("#senha2").val('');
+		$("#cidadecadastro").val('');
+		$("#comum").val('');
+		$("#cargo").val('');
+
+	});
+
+	$("#cadastrarUser").click(function(){
+
+		cadastrarUser();
+
+	});
 	
 
  });

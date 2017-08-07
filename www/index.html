@@ -348,9 +348,10 @@
 
             </div></li>
             <li class="" id="li-resposta"><a id="resposta-server"></a></li>
+            <li class="" id="li-erro"><a id="erro"></a></li>
             <li><div class="divider"></div></li>
 
-            <div id="form-login " class="">
+            <div id="form-login" class="fontebase">
                 <form class="col s12" method="post" onsubmit="">
                   
                   <div class="row">
@@ -367,12 +368,15 @@
                     </div>
                   </div>
                 <button class="valign-wrapper center-align waves-effect waves-light btn-flat cyan darken-4 btn-logar ">Logar</button>
+                </br></br>
+                <h1 id="cadastrese" class="center-align fontebase">Cadastre-se</h1>
           
                </form>  
             </div>
 
             <div id="form-cadastro" class="invisivel">
                 <form class="col s12" method="post" onsubmit="">
+                <div id="erroCadastro"></div>
                   
                   <div class="row">
                     <div class="input-field col s10" id="inputLogin">
@@ -390,29 +394,29 @@
 
                    <div class="row">
                     <div class="input-field col s10" id="inputLogin">
-                      <input id="email" type="email" class="validate" required>
-                      <label for="email">Email:</label>
+                      <input id="emailcadastro" type="email" class="validate" required>
+                      <label for="emailcadastro">Email:</label>
                     </div>
                   </div>
                   
                    <div class="row">
                     <div class="input-field col s10" id="inputLogin">
-                      <input id="senha" type="password" class="validate" required>
-                      <label for="senha">Senha:</label>
+                      <input id="senhacadastro" type="password" class="validate" required>
+                      <label for="senhacadastro">Senha:</label>
                     </div>
                   </div>
 
                   <div class="row">
                     <div class="input-field col s10" id="inputLogin">
-                      <input id="senha" type="password" class="validate" required>
-                      <label for="senha">Confirmação de senha:</label>
+                      <input id="senha2" type="password" class="validate" required>
+                      <label for="senha2">Confirmação de senha:</label>
                     </div>
                   </div>
 
                   <div class="row">
                     <div class="input-field col s10" id="inputLogin">
-                      <input id="cidade" type="text" class="validate" required>
-                      <label for="cidade">Cidade:</label>
+                      <input id="cidadecadastro" type="text" class="validate" required>
+                      <label for="cidadecadastro">Cidade:</label>
                     </div>
                   </div>
 
@@ -432,7 +436,8 @@
 
 
                  
-                <button class="valign-wrapper center-align waves-effect waves-light btn-flat cyan darken-4 btn-logar">Cadastrar</button>
+                <h1 id="cadastrarUser" class="valign-wrapper center-align waves-effect waves-light btn-flat cyan darken-4 btn-logar">Cadastrar</h1>
+                 <h1 class="valign-wrapper center-align waves-effect waves-light btn-flat red btnCancelar" id="cancelar-cadastro">Cancelar</h1>
           
                </form>  
 
@@ -443,22 +448,14 @@
 
 
           <ul class="collection">
-          <li class="collection-item config-item">
-              <a href="#" data-activates="slide-out" class="button-collapse">
+          <li class="collection-item config-item" >
+              <a  data-activates="slide-out" class="button-collapse" >
                 <svg class="icon icon-menu" id="login-conexao">
                     <use xlink:href="#icon-menu"></use>
                 </svg>
               </a>
           </li>
           </ul>
-
-
-
-
-
-
-
-
 
 
 
@@ -478,6 +475,7 @@
       <script type="text/javascript" src="js/bd.js"></script>
       <script type="text/javascript" src="js/speech.js"></script>
       <script type="text/javascript" src="js/config.js"></script>
+      <script type="text/javascript" src="js/user.js"></script>
      
      
 </body>

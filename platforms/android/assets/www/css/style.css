@@ -30,6 +30,9 @@ body {
 .visivel{
 	display: none;
 }
+.fontebase{
+	font-family: 'Lato';
+}
 /*
 .container-main{
 	width: 100%;
@@ -425,6 +428,16 @@ input[type=text]{
 	font-family: 'Lato' !important;
 	color: #fff !important;
 }
+.btnCancelar{ /* Cancelar cadastro*/
+	width: 80% !important;
+	height: 2rem !important;
+	margin-left: 10% !important;
+	margin-top: 4% !important;
+	font-size: 0.8rem !important;
+	font-family: 'Lato' !important;
+	color: #fff !important
+
+}
 .btn-fecha-user{
 	margin-top: -70%;
 	margin-left: 90%;	
@@ -438,6 +451,12 @@ input[type=text]{
 #carregando{
 	margin-top: 50% !important;
 	margin-left: 42% !important;
+}
+
+#cadastrese{
+	color: #1565c0;
+	margin-left: 0%;
+	position: relative;          
 }
 /*============================== SVG =============================*/
 
@@ -777,7 +796,7 @@ input[type=text]{
 }
 
 .side-nav{
-	height: 37.4rem !important;
+	height: 37rem !important;
 	margin-top: 14% !important;
 }
 
