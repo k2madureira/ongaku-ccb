@@ -24,13 +24,10 @@
 			$tipoId = 'id';
 			$tipo_Id_Email  = 'idEmail'; 
 			$tipo_Id_Senha  = 'idSenha';
-
 			$tipoEmail='email';	
 			$tipoNome='nome';
 			$tipoSobrenome = 'sobrenome'; 
 			$tipoCargo ='cargo';
-			$tipoInstrumento = 'instrumento';
-			$tipoClave = 'clave';
 			$tipoCidade = 'cidade';
 			$tipoComum = 'comum';
 			$tipoImg = 'img';

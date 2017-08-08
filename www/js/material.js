@@ -69,7 +69,7 @@ var db; //variavel para banco de dados
       );
 
       db.executeSql(
-        'CREATE TABLE IF NOT EXISTS usuario (iduser INTEGER PRIMARY KEY AUTOINCREMENT, nome TEXT NOT NULL, cargo TEXT NOT NULL, foto TEXT NOT NULL)'
+        'CREATE TABLE IF NOT EXISTS usuario (iduser INTEGER PRIMARY KEY AUTOINCREMENT, nome TEXT NOT NULL, email TEXT NOT NULL, cargo TEXT NOT NULL, foto TEXT)'
   
       );
 

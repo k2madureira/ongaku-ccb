@@ -1,5 +1,54 @@
 		
 
+function logarUser(){
+
+	var email = $("#email").val();
+	var senha = $("#senha").val();
+	var requisicao = 'login';
+	var msg = document.querySelector("#li-erro");
+
+	$.ajax({
+		type:"POST",
+		dataType:'json',
+		data:{email:email,senha:senha,requisicao:requisicao},
+		url:"https://twoconeb.000webhostapp.com/projetos/ongakuCcb/bd/conexaoUser.php",
+		cache:false,
+		beforeSend: function(){console.log('logando...');},
+		success:function(data){
+
+			if(data == 'fail'){
+					setTimeout(function(){
+						msg.classList.add("red");
+						msg.textContent='Email ou senha incorretos.';
+			           
+
+			       	},500);
+
+			       	setTimeout(function(){
+						msg.classList.remove("red");
+						msg.textContent='';
+			           
+
+			       	},5000);
+
+
+
+			}else{
+				addUserLocal(data);
+
+			}
+
+			
+
+		}
+	});
+
+
+}
+
+
+
+
 function cadastrarUser(){
 
 		var achouErro = 0;
@@ -120,7 +169,7 @@ function mensagemErro(elemento){
 					Mensagems possíveis de erro
  ===================================================================================*/
 		var padraoUm ='Por favor, preencha todos campos.';
-		var senha ='As senha devem ser iquais';
+		var senha ='As senhas devem ser iquais.';
 		var senhaIncompleta ='A senha deve possuir de 7 a 14 caracteres.';
 
 /*==================================================================================*/

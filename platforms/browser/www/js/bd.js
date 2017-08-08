@@ -23,6 +23,30 @@ return 'ok';
 
 
 }
+
+function addUserLocal(data){
+
+db = window.sqlitePlugin.openDatabase({name: 'DB', location: 'default'});
+
+
+db.executeSql('SELECT * FROM usuario', [], function(rs){
+
+	if(rs.rows.length ==0){
+
+
+		db.executeSql('INSERT INTO usuario (nome, email, cargo) VALUES (?,?,?)', [data.nome, data.email, data.cargo]);
+
+	}else{
+
+		alert('ja logado');
+	}
+
+
+	
+});
+
+
+}
 //======================================================================================
 function editar(pacote,id){
 
@@ -42,7 +66,7 @@ function showTable(){
 	
 
 	db = window.sqlitePlugin.openDatabase({name: 'DB', location: 'default'});
-	db.executeSql('SELECT * FROM ensaios', [], function(rs){
+	db.executeSql('SELECT * FROM usuario', [], function(rs){
 		
 		var aux =rs.rows.length-1;
 		for(var i =0; i<rs.rows.length; i++){
@@ -53,7 +77,7 @@ function showTable(){
 
 
 		for(var i =0; i<rs.rows.length; i++){
-			text += 'key:'+i+" Id:"+rs.rows.item(inverso[i]).idensaio+" "+"Cidade: "+rs.rows.item(inverso[i]).cidade+"<br> ";
+			//text += 'key:'+i+" Id:"+rs.rows.item(inverso[i]).idensaio+" "+"Cidade: "+rs.rows.item(inverso[i]).cidade+"<br> ";
 			
 		}
 				
@@ -111,6 +135,8 @@ function criaTable(){
 		    'CREATE TABLE IF NOT EXISTS ensaios (idensaio INTEGER PRIMARY KEY AUTOINCREMENT, tipo TEXT NOT NULL, cidade TEXT NOT NULL, bairro TEXT NOT NULL, data TEXT NOT NULL, horario TEXT NOT NULL, tmusicos INTEGER, torganistas INTEGER)'
 	
 		  );
+
+		  
     	   
     	
 }

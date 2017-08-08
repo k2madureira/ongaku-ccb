@@ -71,6 +71,10 @@ var bairro;
 
 	 });
 
+	 $("#logarUser").click(function(){
+	 	logarUser();
+	 });
+
 	$("#cadastrese").click(function(){
 
 

@@ -1,5 +1,56 @@
 		
 
+function logarUser(){
+
+	var email = $("#email").val();
+	var senha = $("#senha").val();
+	var requisicao = 'login';
+	var msg = document.querySelector("#li-erro");
+
+	$.ajax({
+		type:"POST",
+		dataType:'json',
+		data:{email:email,senha:senha,requisicao:requisicao},
+		url:"https://twoconeb.000webhostapp.com/projetos/ongakuCcb/bd/conexaoUser.php",
+		cache:false,
+		beforeSend: function(){console.log('logando...');},
+		success:function(data){
+
+			if(data == 'fail'){
+					setTimeout(function(){
+						msg.classList.add("red");
+						msg.textContent='Email ou senha incorretos.';
+			           
+
+			       	},500);
+
+			       	setTimeout(function(){
+						msg.classList.remove("red");
+						msg.textContent='';
+			           
+
+			       	},5000);
+
+
+
+			}else{
+				
+				
+				//addUserLocal(data);
+
+			}
+
+			
+
+		}
+	});
+
+
+}
+
+
+
+
 function cadastrarUser(){
 
 		var achouErro = 0;
