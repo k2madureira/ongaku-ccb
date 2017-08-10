@@ -32,7 +32,12 @@ db = window.sqlitePlugin.openDatabase({name: 'DB', location: 'default'});
 
 db.executeSql('SELECT * FROM usuario', [], function(rs){
 
-	if(rs.rows.length ==0){
+	alert(data.nome);
+	alert(data.email);
+	alert(data.cargo);
+	alert(rs.rows.length);
+
+	/*if(rs.rows.length ==0){
 
 
 		db.executeSql('INSERT INTO usuario (nome, email, cargo) VALUES (?,?,?)', [data.nome, data.email, data.cargo]);
@@ -40,7 +45,7 @@ db.executeSql('SELECT * FROM usuario', [], function(rs){
 	}else{
 
 		alert('ja logado');
-	}
+	}*/
 
 
 	
