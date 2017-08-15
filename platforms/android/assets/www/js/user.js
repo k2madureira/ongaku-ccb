@@ -35,9 +35,8 @@ function logarUser(){
 
 			}else{
 				
-				alert(data.nome);
-				alert(data.email);
-				//addUserLocal(data);
+				
+				addUserLocal(data);
 
 			}
 

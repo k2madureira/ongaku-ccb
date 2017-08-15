@@ -36,7 +36,7 @@ function logarUser(){
 			}else{
 				
 				
-				//addUserLocal(data);
+				addUserLocal(data);
 
 			}
 

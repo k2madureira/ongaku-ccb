@@ -27,21 +27,27 @@ return 'ok';
 function addUserLocal(data){
 
 db = window.sqlitePlugin.openDatabase({name: 'DB', location: 'default'});
-
+var nome = String(data.nome);
+var email = String(data.email);
+var cargo = String(data.cargo);
 
 
 db.executeSql('SELECT * FROM usuario', [], function(rs){
 
-	if(rs.rows.length ==0){
+	
+   
+	if(rs.rows.length==0){
 
+     
+     db.executeSql('INSERT INTO usuario (nome, email, cargo) VALUES (?,?,?)', [nome, email, cargo]);
+     loginLocal(nome,email,cargo);
 
-		db.executeSql('INSERT INTO usuario (nome, email, cargo) VALUES (?,?,?)', [data.nome, data.email, data.cargo]);
 
 	}else{
 
-		alert('ja logado');
+		
 	}
-
+   
 
 	
 });
@@ -137,7 +143,9 @@ function criaTable(){
 	
 		  );
 
-		  
+       
+		
+  
     	   
     	
 }
@@ -232,7 +240,12 @@ function showboxinfo(id){
 	});
 
 	
+function loginLocal(nome,email,cargo){
 
+	$("#login-nome").innerHTML(nome);
+	$("#login-cargo").innerHTML(cargo);
+
+}
 	
 }
 function loadWallpaper(){
