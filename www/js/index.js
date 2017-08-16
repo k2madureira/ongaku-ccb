@@ -63,6 +63,7 @@ var bairro;
 	 $("#login-conexao").click(function(){
 
 	 	 testaConexao();
+	 	 loadUser();
 
 	 });
 

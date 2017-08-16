@@ -46,7 +46,7 @@ var db; //variavel para banco de dados
 //===================================================================================================
     function onDeviceReady() {
 
-       // addEnsaios();
+       
 
     	db = window.sqlitePlugin.openDatabase({name: 'DB', location: 'default'});
     		
@@ -69,7 +69,7 @@ var db; //variavel para banco de dados
       );
 
       db.executeSql(
-        'CREATE TABLE IF NOT EXISTS usuario (iduser INTEGER PRIMARY KEY AUTOINCREMENT, nome TEXT NOT NULL, email TEXT NOT NULL, cargo TEXT NOT NULL, foto TEXT)'
+        'CREATE TABLE IF NOT EXISTS usuario (iduser INTEGER PRIMARY KEY AUTOINCREMENT,idusuario INTEGER NOT NULL, nome TEXT NOT NULL, email TEXT NOT NULL, cargo TEXT NOT NULL, foto TEXT)'
   
       );
 
@@ -93,9 +93,8 @@ var db; //variavel para banco de dados
            db.executeSql('INSERT INTO config (wallpaper) VALUES (?)', ['img/wallpaper1.jpg']);
 
         }
-
-
       });
+
   		  
 		   
         loadWallpaper();

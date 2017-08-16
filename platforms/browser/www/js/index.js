@@ -10,11 +10,6 @@ var bairro;
 
 
 
-
-
-
-
-
  $( document ).ready(function() {
 
  		var data = new Date();
@@ -68,6 +63,7 @@ var bairro;
 	 $("#login-conexao").click(function(){
 
 	 	 testaConexao();
+	 	 loadUser();
 
 	 });
 
@@ -297,7 +293,7 @@ function msgConexao(resposta){
 					liResposta.classList.add("green");
 
 				}else{
-					campResposta.textContent = 'Servidor off.';
+					campResposta.textContent = 'Sem conexão.';
 					liResposta.classList.add("red");
 				}
 

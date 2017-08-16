@@ -1,4 +1,20 @@
-		
+
+function loadUser(){
+var campNome = document.querySelector("#login-nome");
+var campCargo = document.querySelector("#login-cargo");
+
+db = window.sqlitePlugin.openDatabase({name: 'DB', location: 'default'});
+db.executeSql('SELECT * FROM usuario', [], function(rs){
+
+			campNome.textContent = rs.rows.item(0).nome;
+	        campCargo.textContent = rs.rows.item(0).cargo;
+
+
+
+});
+
+}
+	
 
 function logarUser(){
 
@@ -34,6 +50,8 @@ function logarUser(){
 
 
 			}else{
+				
+				
 				addUserLocal(data);
 
 			}

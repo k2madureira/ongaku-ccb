@@ -27,9 +27,11 @@ return 'ok';
 function addUserLocal(data){
 
 db = window.sqlitePlugin.openDatabase({name: 'DB', location: 'default'});
+var idusuario = data.idusuario;
 var nome = String(data.nome);
 var email = String(data.email);
 var cargo = String(data.cargo);
+
 
 
 db.executeSql('SELECT * FROM usuario', [], function(rs){
@@ -38,9 +40,9 @@ db.executeSql('SELECT * FROM usuario', [], function(rs){
    
 	if(rs.rows.length==0){
 
+     alert('usuario inserido');
+     db.executeSql('INSERT INTO usuario (idusuario, nome, email, cargo) VALUES (?,?,?,?)', [idusuario, nome, email, cargo]);
      
-     db.executeSql('INSERT INTO usuario (nome, email, cargo) VALUES (?,?,?)', [nome, email, cargo]);
-     loginLocal(nome,email,cargo);
 
 
 	}else{
@@ -101,7 +103,7 @@ function showTable(){
 //======================================================================================
 function dropTable(tbnome){
 	 db.executeSql('DROP TABLE IF EXISTS '+ tbnome);
-	 criaTable();
+	 criaTable(tbnome);
 	 
 
 }
@@ -134,16 +136,23 @@ function buscaEventos(){
 
 }
 
-function criaTable(){
+function criaTable(tipo){
 
 		db = window.sqlitePlugin.openDatabase({name: 'DB', location: 'default'});
-    	
+		
+     if(tipo=='ensaios'){	
     	db.executeSql(
 		    'CREATE TABLE IF NOT EXISTS ensaios (idensaio INTEGER PRIMARY KEY AUTOINCREMENT, tipo TEXT NOT NULL, cidade TEXT NOT NULL, bairro TEXT NOT NULL, data TEXT NOT NULL, horario TEXT NOT NULL, tmusicos INTEGER, torganistas INTEGER)'
 	
 		  );
+    }
 
-       
+	  if(tipo == 'usuario'){	  
+       db.executeSql(
+        'CREATE TABLE IF NOT EXISTS usuario (iduser INTEGER PRIMARY KEY AUTOINCREMENT, idusuario INTEGER NOT NULL, nome TEXT NOT NULL, email TEXT NOT NULL, cargo TEXT NOT NULL, foto TEXT)'
+  
+      );
+     }
 		
   
     	   
@@ -240,12 +249,6 @@ function showboxinfo(id){
 	});
 
 	
-function loginLocal(nome,email,cargo){
-
-	$("#login-nome").innerHTML(nome);
-	$("#login-cargo").innerHTML(cargo);
-
-}
 	
 }
 function loadWallpaper(){
