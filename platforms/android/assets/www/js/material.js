@@ -90,7 +90,7 @@ var db; //variavel para banco de dados
           db.executeSql('INSERT INTO clave (clave) VALUES (?)', ['img/clave2.png']);
           db.executeSql('INSERT INTO clave (clave) VALUES (?)', ['img/clave3.png']);
 
-           db.executeSql('INSERT INTO config (wallpaper) VALUES (?)', ['img/wallpaper1.jpg']);
+          db.executeSql('INSERT INTO config (wallpaper) VALUES (?)', ['img/wallpaper1.jpg']);
 
         }
       });

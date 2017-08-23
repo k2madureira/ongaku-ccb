@@ -321,8 +321,13 @@ input[type=text]{
 	width:  100% !important;
 	margin-left: 10% !important;
 }
+
 #inputLogin label{
 	margin-left: 10% !important;
+}
+
+#configWallpaper{
+	height: 10rem !important;
 }
 
 /*=================================================================*/
@@ -458,6 +463,20 @@ input[type=text]{
 	margin-left: 0%;
 	position: relative;          
 }
+
+#config-li{
+	background: transparent !important;
+}
+.btn-fala{
+	position: fixed;
+	margin-top: 90%;
+	margin-left: 90%;	
+	width:4.2rem !important; 
+	height:4.2rem !important;
+	font-size: 2rem !important;
+	padding-top: 0.1em;	
+
+}
 /*============================== SVG =============================*/
 
 .svg{
@@ -541,6 +560,19 @@ input[type=text]{
 .icon-users:hover{
   fill: #12f3f3;	
 }
+.icon-mic{
+  width: 2rem;
+  height: 2rem;
+  margin-left: 0%;
+  margin-bottom: 0%;
+  position: relative;
+  fill: #fff;
+}
+.icon-mic:hover{
+  fill: #12f3f3;		
+}
+
+
 .icon-menu{
   width: 1rem;
   height: 1rem;
@@ -673,7 +705,7 @@ input[type=text]{
 .btn-fala{
 	position: fixed;
 	margin-top: 75%;
-	margin-left: 15%;	
+	margin-left: 90%;	
 	width:4.2rem !important; 
 	height:4.2rem !important;
 	font-size: 2rem !important;
@@ -798,6 +830,17 @@ input[type=text]{
 .side-nav{
 	height: 37rem !important;
 	margin-top: 14% !important;
+}
+
+.btn-fala{
+	position: fixed;
+	margin-top: 85%;
+	margin-left: 90%;	
+	width:4.2rem !important; 
+	height:4.2rem !important;
+	font-size: 2rem !important;
+	padding-top: 0.1em;	
+
 }
 
 

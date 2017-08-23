@@ -191,13 +191,13 @@ function montaEventos(){
 
 
 			 	if(strTipo == 'tecnico'){
-			 		var img = 'img/clave-sol.png';
+			 		var img = 'img/wallpaper3.jpg';
 			 	}
 			 	if(strTipo == 'local'){
-			 		var img = 'img/wallpaper.jpg';
+			 		var img = 'img/wallpaper1.jpg';
 			 	}
 			 	if(strTipo == 'regional'){
-			 		var img = 'img/avatar.png';
+			 		var img = 'img/wallpaper2.jpg';
 			 	}
 
 		   $("#colecao-eventos").append('<li class="collection-item-evento">'+
@@ -266,7 +266,26 @@ function loadWallpaper(){
 	});
 }
 
-function updateWallpaper(id){
+function updateWallpaper(wallpaper){
+
+  db = window.sqlitePlugin.openDatabase({name: 'DB', location: 'default'});
+   
+   db.transaction(function (tx) {
+
+        var query = "UPDATE config SET wallpaper = ? WHERE idconfig = ?";
+
+        tx.executeSql(query, [wallpaper, 1], function(tx, res) {
+        	var msg = 'ok';
+            
+        },
+        function(tx, error) {
+            //alert('UPDATE error: ' + error.message);
+        });
+    }, function(error) {
+        console.log('transaction error: ' + error.message);
+    }, function() {
+        console.log('transaction ok');
+    });
 
 
 

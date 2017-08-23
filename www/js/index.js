@@ -107,6 +107,33 @@ var bairro;
 		cadastrarUser();
 
 	});
+
+	$("#escolhaWallpaper").click(function(){
+		
+		var home =document.querySelector("#navHome");
+		var wallpaper=document.querySelector("#img-wallpaper");
+		var svgmic = document.querySelector("#svgmic");
+		var homeWallpaper = $("#selectWallpaper").val();
+		let update = updateWallpaper(homeWallpaper);
+
+		
+			let load =document.querySelector("#carregando-wallpaper");
+
+			home.click();
+			wallpaper.classList.add("invisivel");
+			svgmic.classList.add("invisivel2");
+			load.classList.remove("invisivel");
+			loadWallpaper();
+			$(".home-wallpaper").load(window.location.href + ".home-wallpaper" );
+			
+			setTimeout(function(){
+				load.classList.add("invisivel");
+				wallpaper.classList.remove("invisivel");
+				svgmic.classList.remove("invisivel2");
+			},2000);
+			
+		
+	});
 	
 
  });

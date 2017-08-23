@@ -266,9 +266,28 @@ function loadWallpaper(){
 	});
 }
 
-function updateWallpaper(id){
+function updateWallpaper(wallpaper){
 
+  db = window.sqlitePlugin.openDatabase({name: 'DB', location: 'default'});
+   
+   db.transaction(function (tx) {
 
+        var query = "UPDATE config SET wallpaper = ? WHERE idconfig = ?";
+
+        tx.executeSql(query, [wallpaper, 1], function(tx, res) {
+        	var msg = 'ok';
+            
+        },
+        function(tx, error) {
+            //alert('UPDATE error: ' + error.message);
+        });
+    }, function(error) {
+        console.log('transaction error: ' + error.message);
+    }, function() {
+        console.log('transaction ok');
+    });
+
+return msg;
 
 }
 
