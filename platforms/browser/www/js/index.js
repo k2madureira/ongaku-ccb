@@ -35,14 +35,15 @@ var bairro;
          }).submit();
      });*/
 
- 		
-	
+ 	
+	//loadHome();
+
 	 $("#navEventos").click(function(){
 	 	updateDiv();
 	 	
 	 	
 	 });
-
+/*
 	 $("#btnSalvar").click(function(){
 
 	 	var home =document.querySelector("#navHome");
@@ -50,7 +51,7 @@ var bairro;
 	 	home.click();
 	 	
 	 	Materialize.toast('Ensaio adicionado', 4000);
-	 });
+	 });*/
 
 	 $("#icon-help-box").click(function(){
 	 	
@@ -110,8 +111,10 @@ var bairro;
 
 	$("#escolhaWallpaper").click(function(){
 		
+		var loginButton = document.querySelector(".iconMenu-contorno");
 		var home =document.querySelector("#navHome");
 		var wallpaper=document.querySelector("#img-wallpaper");
+		var svgmic = document.querySelector("#svgmic");
 		var homeWallpaper = $("#selectWallpaper").val();
 		let update = updateWallpaper(homeWallpaper);
 
@@ -120,12 +123,17 @@ var bairro;
 
 			home.click();
 			wallpaper.classList.add("invisivel");
+			svgmic.classList.add("invisivel2");
+			loginButton.classList.add("invisivel2");
 			load.classList.remove("invisivel");
-			$("#home-wallpaper").load(window.location.href + " #home-wallpaper" );
+			loadWallpaper();
+			$(".home-wallpaper").load(window.location.href + ".home-wallpaper" );
 			
 			setTimeout(function(){
 				load.classList.add("invisivel");
 				wallpaper.classList.remove("invisivel");
+				svgmic.classList.remove("invisivel2");
+				loginButton.classList.remove("invisivel2");
 			},2000);
 			
 		
@@ -134,7 +142,33 @@ var bairro;
 
  });
 
+ function loadHome(){
 
+ 		var loginButton = document.querySelector(".iconMenu-contorno");
+		var wallpaper=document.querySelector("#img-wallpaper");
+		var svgmic = document.querySelector("#svgmic");
+		var homeWallpaper = $("#selectWallpaper").val();
+		let update = updateWallpaper(homeWallpaper);
+
+		
+			let load =document.querySelector("#carregando-wallpaper");
+
+			
+			wallpaper.classList.add("invisivel");
+			svgmic.classList.add("invisivel2");
+			loginButton.classList.add("invisivel2");
+			load.classList.remove("invisivel");
+			loadWallpaper();
+			$(".home-wallpaper").load(window.location.href + ".home-wallpaper" );
+			
+			setTimeout(function(){
+				load.classList.add("invisivel");
+				wallpaper.classList.remove("invisivel");
+				svgmic.classList.remove("invisivel2");
+				loginButton.classList.remove("invisivel2");
+			},2000);
+			
+ }
 
  function updateDiv() { 
 
@@ -175,7 +209,7 @@ var bairro;
 
  	if(!tipoEnsaio){
  		 Materialize.toast('Escolheu o tipo de ensaio ?', 5000);
- 	}
+ 	}else{
 
  	liPart2.classList.remove('disabled');
  	liPart1.classList.add('disabled');
@@ -183,17 +217,24 @@ var bairro;
  	lia2.classList.add('active');
 
  	lia2.click();
-
+   }
 
  }
 
  function cadastrar(){
  	event.preventDefault();
 
+ 	var home =document.querySelector("#navHome");
  	var data = $('#data').val();
  	var horas=$('#horario').val();
  	var minutos=$('#minutos').val();
  	var meses= ["Janeiro","Fevereiro","Março","Abril","Maio","Junho","Julho","Agosto","Setembro","Outubro","Novembro","Dezembro"];
+
+
+ 	if(!data){
+ 		Materialize.toast('Qual a data do ensaio ?', 5000);
+ 	}
+
 
  	var rgxMes = /[A-z][a-z]{1,8}/;
  	var rgxDia = /\d{2}/;
@@ -207,7 +248,17 @@ var bairro;
  	var Smes = String(vetMes[0]);
  	var Ano = String(vetAno[0]);
 
- 	for(let i=0;i<12;i++){
+ 	
+
+     if(!horas || !minutos){
+ 		Materialize.toast('Preencha todos os campos.', 5000);
+ 	}if(minutos.length>3){
+ 		Materialize.toast('Utilize no campo minutos números entre 0 a 59.', 5000);
+ 	}if(horas.length>3){
+ 		Materialize.toast('Utilize no campo horas números entre 0-23', 5000);
+ 	}else{
+
+ 			for(let i=0;i<12;i++){
 
  		if(Smes == meses[i]){
  			if(i==0){ 
@@ -228,13 +279,19 @@ var bairro;
  	var inserir = add(tipoEnsaio,cidade,bairro,fullData,fullHorario,0,0);
  	
  	if(inserir=='ok'){
- 		btncancelar.click();	
+
+ 		btncancelar.click();
+	 	home.click();
+	 	Materialize.toast('Ensaio adicionado', 4000);
+
+
  	}else{
- 		msg.textContent = 'Algo deu errado mestre';
+ 		msg.textContent = 'Algo deu errado!';
  	}
 
- 	
- 	
+
+ 	}
+
  	
  }
 
@@ -310,14 +367,18 @@ function msgConexao(resposta){
 
 	var campResposta = document.querySelector("#resposta-server");
 	var liResposta = document.querySelector("#li-resposta");
+	var iconConexao = document.querySelector("#iconConexao");
 
 	            if(resposta == 'ok'){
-					campResposta.textContent = 'Servidor on.';
-					liResposta.classList.add("green");
+					
+					//liResposta.classList.add("green");
+					iconConexao.classList.add("conexaon");
 
 				}else{
-					campResposta.textContent = 'Sem conexão.';
-					liResposta.classList.add("red");
+					
+					//liResposta.classList.add("red");
+					iconConexao.classList.add("conexaoff");
+
 				}
 
 }

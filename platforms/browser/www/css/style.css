@@ -24,7 +24,7 @@ body {
 .invisivel{
 	display: none;
 }
-.invisivel-2{
+.invisivel2{
 	visibility: hidden;
 }
 .visivel{
@@ -204,6 +204,7 @@ body {
 .config-item{
 	background: transparent !important;
 	border: transparent !important;
+	z-index: 800 !important;
 	/*border-top: 1px solid #12f3f3 !important;*/
 
 }
@@ -372,6 +373,19 @@ input[type=text]{
 	height: 100%;
 	position: fixed;
 	z-index: 1;
+	/*margin-top: -3.8rem;*/
+}
+
+.iconMenu-contorno{
+	width: 9%;
+	height: 2rem;
+	margin-top: -40%;
+	margin-left: 2%;
+	z-index: 900;
+	position: absolute;
+	background-color:transparent;
+	border-radius: 50%; 
+ 	box-shadow: 1rem 1rem 3rem #000 ;
 }
 .home-front{
 	z-index: 2;
@@ -457,7 +471,10 @@ input[type=text]{
 	margin-top: 50% !important;
 	margin-left: 42% !important;
 }
-
+#carregando-wallpaper{
+	margin-top: 10% !important;
+	margin-left: 42% !important;
+}
 #cadastrese{
 	color: #1565c0;
 	margin-left: 0%;
@@ -572,7 +589,20 @@ input[type=text]{
   fill: #12f3f3;		
 }
 
-
+.icon-connection{
+  width: 2rem;
+  height: 1rem;
+  margin-left: 2%;
+  margin-top: 2%;
+  position: relative;
+  fill: #000;
+}
+.conexaoff{
+	fill: #FF0000;
+}
+.conexaon{
+	fill: #00FF00;
+}
 .icon-menu{
   width: 1rem;
   height: 1rem;
@@ -765,6 +795,19 @@ input[type=text]{
 }
 
 
+.iconMenu-contorno{
+	width: 8%;
+	height: 2rem;
+	margin-top: -60%;
+	margin-left: 2%;
+	z-index: 900;
+	position: absolute;
+	background-color:transparent;
+	border-radius: 50%; 
+ 	box-shadow: 1rem 1rem 3rem #000 ;
+}
+
+
 }
 @media (min-width: 412px){	
 
@@ -779,7 +822,13 @@ input[type=text]{
 	/*overflow-y: hidden;*/
 
 }	
-
+.iconMenu-contorno{
+	width: 6%;
+	height: ;
+	background-color:transparent;
+	border-radius: 50%; 
+ 	box-shadow: 1rem 1rem 3rem #000 ;
+}
 .conteudo-home{
 	width: 100%;
 	height: 43rem;
@@ -828,7 +877,7 @@ input[type=text]{
 }
 
 .side-nav{
-	height: 37rem !important;
+	height: 39rem !important;
 	margin-top: 14% !important;
 }
 
@@ -874,7 +923,7 @@ input[type=text]{
 	width: 42%;
 	height: 10rem;
 	margin-left: 57%;
-	margin-top: 5%;
+	margin-top: 6%;
 	background-color:transparent;
 	/*background-color:#000;
 	opacity: 0.6;*/
@@ -899,6 +948,13 @@ input[type=text]{
 	font-family: 'Lato';
 	font-size: 1rem;
 	font-weight: 400;
+}
+.iconMenu-contorno{
+	width: 7%;
+	height: ;
+	background-color:transparent;
+	border-radius: 50%; 
+ 	box-shadow: 1rem 1rem 3rem #000 ;
 }
 .icon-help{
 

@@ -191,13 +191,13 @@ function montaEventos(){
 
 
 			 	if(strTipo == 'tecnico'){
-			 		var img = 'img/clave-sol.png';
+			 		var img = 'img/wallpaper3.jpg';
 			 	}
 			 	if(strTipo == 'local'){
-			 		var img = 'img/wallpaper.jpg';
+			 		var img = 'img/wallpaper1.jpg';
 			 	}
 			 	if(strTipo == 'regional'){
-			 		var img = 'img/avatar.png';
+			 		var img = 'img/wallpaper2.jpg';
 			 	}
 
 		   $("#colecao-eventos").append('<li class="collection-item-evento">'+
@@ -287,7 +287,7 @@ function updateWallpaper(wallpaper){
         console.log('transaction ok');
     });
 
-return msg;
+
 
 }
 

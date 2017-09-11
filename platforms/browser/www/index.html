@@ -82,6 +82,13 @@
             <path d="M15 22c2.761 0 5-2.239 5-5v-12c0-2.761-2.239-5-5-5s-5 2.239-5 5v12c0 2.761 2.239 5 5 5zM22 14v3c0 3.866-3.134 7-7 7s-7-3.134-7-7v-3h-2v3c0 4.632 3.5 8.447 8 8.944v4.056h-4v2h10v-2h-4v-4.056c4.5-0.497 8-4.312 8-8.944v-3h-2z"></path>
             </symbol>
             </svg>
+
+            <!--============== Conexão =================-->
+            <svg class="svg-menu">
+            <symbol id="icon-connection" viewBox="0 0 40 32">
+            <path d="M20 18c3.308 0 6.308 1.346 8.481 3.519l-2.827 2.827c-1.449-1.449-3.449-2.346-5.654-2.346s-4.206 0.897-5.654 2.346l-2.827-2.827c2.173-2.173 5.173-3.519 8.481-3.519zM5.858 15.858c3.777-3.777 8.8-5.858 14.142-5.858s10.365 2.080 14.142 5.858l-2.828 2.828c-3.022-3.022-7.040-4.686-11.314-4.686s-8.292 1.664-11.314 4.686l-2.828-2.828zM30.899 4.201c3.334 1.41 6.329 3.429 8.899 6v0l-2.828 2.828c-4.533-4.533-10.56-7.029-16.971-7.029s-12.438 2.496-16.971 7.029l-2.828-2.828c2.571-2.571 5.565-4.589 8.899-6 3.453-1.461 7.12-2.201 10.899-2.201s7.446 0.741 10.899 2.201zM18 28c0-1.105 0.895-2 2-2s2 0.895 2 2c0 1.105-0.895 2-2 2s-2-0.895-2-2z"></path>
+            </symbol>
+            </svg>
 <!--============================================================================================================-->
 <!--============================  HEADER ======================================================================-->
   <header class="">
@@ -149,25 +156,10 @@
 <!--=========================================================================================================-->  
 
         <div id="home" class=" conteudo-home">
+
+    
            <div class="home-wallpaper"><img id="img-wallpaper"></div>
             
-
-                <div class="preloader-wrapper big active invisivel" id="carregando-wallpaper">
-                    <div class="spinner-layer spinner-blue-only">
-                      <div class="circle-clipper left">
-                        <div class="circle"></div>
-                      </div><div class="gap-patch">
-                        <div class="circle"></div>
-                      </div><div class="circle-clipper right">
-                        <div class="circle"></div>
-                      </div>
-                    </div>
-                  </div>
-
-
-
-
-
            <div class="home-front"> 
              
              <svg class="icon icon-help"  id="icon-help-box"><use xlink:href="#icon-help"></use></svg>
@@ -181,8 +173,20 @@
                     
              </p>   
 
+             <div class="preloader-wrapper big active invisivel" id="carregando-wallpaper">
+                    <div class="spinner-layer spinner-green-only">
+                      <div class="circle-clipper left">
+                        <div class="circle"></div>
+                      </div><div class="gap-patch">
+                        <div class="circle"></div>
+                      </div><div class="circle-clipper right">
+                        <div class="circle"></div>
+                      </div>
+                    </div>
+                  </div>
+
         <h1 class="btn-fala" onclick="escuta();">
-          <svg class="icon icon-mic"><use xlink:href="#icon-mic"></use></svg>
+          <svg class="icon icon-mic" id="svgmic"><use xlink:href="#icon-mic"></use></svg>
         </h1>
         
         
@@ -213,151 +217,12 @@
         
 
            </div> 
-        </div>
-<!--=========================================================================================================-->          
-<!--============================  Eventos ====================================================================--> 
-<!--=========================================================================================================-->        
-        <div id="eventos" class="col s12 conteudo">
-          
-           
 
-           <a href="#x" id ="cadastrar-evento" class="btn-floating btn-large waves-effect waves-light green btn-plus modal-trigger">+</a>
 
-          
 
-           <div id="x" class="modal modal-fixed-footer">
-            <div class="modal-content">
               
 
-            
-        
-<!--============================  FORM PART I =====================================================================-->  
-          <div id="part1">
-
-          <div class="row">
-            <form class="col s12" method="post" onsubmit="continuar()">
-                  
-                  
-                    <select class="icons" id="tipoEnsaio">
-                      <option value="" disabled selected>Tipo de ensaio</option>
-                      <option value="tecnico" data-icon="img/avatar.png" class="circle">Técnico</option>
-                      <option value="local" data-icon="img/clave-sol.png" class="circle">Local</option>
-                      <option value="regional" data-icon="img/avatar.png" class="circle">Regional</option>
-                    </select>
-                  
-
-                  <div class="row">
-                    <div class="input-field col s12" id="inputLogin">
-                      <input id="cidade" type="text" class="validate" required>
-                      <label for="cidade">Cidade</label>
-                    </div>
-                  </div>
-                  
-                   <div class="row">
-                    <div class="input-field col s12" id="inputLogin">
-                      <input id="bairro" type="text" class="validate" required>
-                      <label for="bairro">Bairro</label>
-                    </div>
-                  </div>
-                <button class="valign-wrapper center-align waves-effect waves-light btn-flat cyan darken-4 btn-continuar">Continuar</button>
-                <!-- <button class="
-              modal-action modal-close valign-wrapper center-align waves-effect waves-light btn-flat red btn-cancelar" onclick="dropTable('ensaios');">Drop Tb</button> -->
-            </form>  
-          </div>    
-
-          </div>
-<!--============================  FORM PART II ====================================================================-->           
-          <div id="part2">
-
-            <div class="row">
-             <form class="col s12" method="post" onsubmit="cadastrar()">
-              
-              <input id="data" placeholder="Data" type="text" class="datepicker" required>
-              <div class="row">
-                    <div class="input-field col s6">
-                      <input  id="horario" type="number" class="validate" min="0" max="23" data-error="0-23" required>
-                      <label for="horario">Horas</label>
-                    </div>
-
-                    <div class="input-field col s6">
-                      <input  id="minutos" type="number" class="validate" min="0" max="59" data-error="0-59" required>
-                      <label for="minutos">Minutos</label>
-                    </div>
-               </div>
-               <button id="btnSalvar" class="valign-wrapper center-align waves-effect waves-light btn-flat cyan darken-4 btn-continuar">Salvar</button> 
-               <button class="
-              modal-action modal-close valign-wrapper center-align waves-effect waves-light btn-flat red btn-cancelar" onclick="cancelar();">Cancelar</button> 
-             
-             </form>  
-            </div>
-          </div>
-<!--=======================================================================================================================-->     
-
-            </div>
-            <div class="modal-footer">
-                <ul class="tabs">
-                    <li id="li1" class="tab col s3 "><a id ="opcao1" class="active" href="#part1" data-toggle="opcao">1</a></li>
-                    <li id="li2" class="tab col s3 disabled"><a id ="opcao2" class="" href="#part2" data-toggle="opcao">2</a></li>
-                   
-                </ul>
-            </div>
-          </div>
-<!--=======================================================================================================================  
-                                       FIM de moldais      
-=======================================================================================================================-->  
-
-
-                <div class="preloader-wrapper big active" id="carregando">
-                    <div class="spinner-layer spinner-blue-only">
-                      <div class="circle-clipper left">
-                        <div class="circle"></div>
-                      </div><div class="gap-patch">
-                        <div class="circle"></div>
-                      </div><div class="circle-clipper right">
-                        <div class="circle"></div>
-                      </div>
-                    </div>
-                  </div>
-
-                  <div class="row box-informacao invisivel" id="infobox">
-                    <div class="col s12 m5">
-                      <div class="card-panel teal informacao-shadow">
-                        <span class="white-text">
-                           <div class="collection">
-                              <a href="#!" class="collection-item info-item"><span id="infoti" class="badge"></span>Tipo:</a>
-                              <a href="#!" class="collection-item info-item"><span id="infoci" class="badge"></span>Cidade:</a>
-                              <a href="#!" class="collection-item info-item"><span id="infoba" class="badge"></span>Bairro:</a>
-                              <a href="#!" class="collection-item info-item"><span id="infoda" class="badge"></span>Data:</a>
-                              <a href="#!" class="collection-item info-item"><span id="infoho" class="badge"></span>Horário:</a>
-                              <a class="waves-effect waves-teal btn-flat center-align blue darken-1 info-button" onclick="fecharinfo();">Fechar</a>
-                          </div>
-                        </span>
-                      </div>
-                    </div>
-                  </div>
-<!--=======================================================================================================================
-                                  área de carregamento de ensaios
-==========================================================================================================================-->
-              <ul class="collection" id="colecao-eventos">
-
-                 
-                  
-              </ul>
-
-<!--=======================================================================================================================-->      
-
-        </div>
-<!--==========================================================================================================================          
-                                        Amigos  
-===========================================================================================================================-->         
-        <div id="amigos" class="col s12 conteudo">
-           Amigos
-        </div>
-<!--=======================================================================================================================         
-                                          Config  
-===========================================================================================================================-->        
-        <div id="conta" class="col s12 conteudo-home">
-            
+<!--============================  menu login====================================================================--> 
 
           <ul id="slide-out" class="side-nav">
             <li><div class="user-view">
@@ -372,7 +237,11 @@
               <span class="white-text" id="login-cargo"></span>
 
             </div></li>
-            <li class="" id="li-resposta"><p id="resposta-server"></p></li>
+            <li class="" id="li-resposta">
+            <svg id="iconConexao" class="icon icon-connection"><use xlink:href="#icon-connection"></use></svg>  
+              
+            <p id="resposta-server"></p>
+            </li>
             <li class="" id="li-erro"><p id="erro"></p></li>
             <li><div class="divider"></div></li>
 
@@ -471,7 +340,7 @@
 
           </ul>
 
-
+          <div class="iconMenu-contorno">
           <ul class="collection">
           <li class="collection-item config-item" >
               <a  data-activates="slide-out" class="button-collapse" >
@@ -481,7 +350,176 @@
               </a>
           </li>
           </ul>
+          </div>
+          
+<!--=================================================================================================-->  
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+        </div>
+<!--=========================================================================================================-->          
+<!--============================  Eventos ====================================================================--> 
+<!--=========================================================================================================-->        
+        <div id="eventos" class="col s12 conteudo">
+          
+           
+
+           <a href="#x" id ="cadastrar-evento" class="btn-floating btn-large waves-effect waves-light green btn-plus modal-trigger">+</a>
+
+          
+
+           <div id="x" class="modal modal-fixed-footer">
+            <div class="modal-content">
+              
+
+            
+        
+<!--============================  FORM PART I =====================================================================-->  
+          <div id="part1">
+
+          <div class="row">
+            <form class="col s12" method="post" onsubmit="continuar()">
+                  
+                  
+                    <select class="icons" id="tipoEnsaio">
+                      <option value="" disabled selected>Tipo de ensaio</option>
+                      <option value="tecnico" data-icon="img/wallpaper3.jpg" class="circle">Técnico</option>
+                      <option value="local" data-icon="img/wallpaper1.jpg" class="circle">Local</option>
+                      <option value="regional" data-icon="img/wallpaper2.jpg" class="circle">Regional</option>
+                    </select>
+                  
+
+                  <div class="row">
+                    <div class="input-field col s12" id="inputLogin">
+                      <input id="cidade" type="text" class="validate" required>
+                      <label for="cidade">Cidade</label>
+                    </div>
+                  </div>
+                  
+                   <div class="row">
+                    <div class="input-field col s12" id="inputLogin">
+                      <input id="bairro" type="text" class="validate" required>
+                      <label for="bairro">Bairro</label>
+                    </div>
+                  </div>
+                <button class="valign-wrapper center-align waves-effect waves-light btn-flat cyan darken-4 btn-continuar">Continuar</button>
+                <!-- <button class="
+              modal-action modal-close valign-wrapper center-align waves-effect waves-light btn-flat red btn-cancelar" onclick="dropTable('ensaios');">Drop Tb</button> -->
+            </form>  
+          </div>    
+
+          </div>
+<!--============================  FORM PART II ====================================================================-->           
+          <div id="part2">
+
+            <div class="row">
+             <form class="col s12" method="post" onsubmit="cadastrar()">
+              
+              <input id="data" placeholder="Selecione a data" value="" type="text" class="datepicker" required>
+              <div class="row">
+                    <div class="input-field col s6">
+                      <input  id="horario" type="number" class="validate" min="0" max="23" data-error="0-23" maxlength="2" required>
+                      <label for="horario">Horas</label>
+                    </div>
+
+                    <div class="input-field col s6">
+                      <input  id="minutos" type="number" class="validate" min="0" max="59" data-error="0-59" maxlength="2" required>
+                      <label for="minutos">Minutos</label>
+                    </div>
+               </div>
+               <button id="btnSalvar" class="valign-wrapper center-align waves-effect waves-light btn-flat cyan darken-4 btn-continuar">Salvar</button> 
+               <button class="
+              modal-action modal-close valign-wrapper center-align waves-effect waves-light btn-flat red btn-cancelar" onclick="cancelar();">Cancelar</button> 
+             
+             </form>  
+            </div>
+          </div>
+<!--=======================================================================================================================-->     
+
+            </div>
+            <div class="modal-footer">
+                <ul class="tabs">
+                    <li id="li1" class="tab col s3 "><a id ="opcao1" class="active" href="#part1" data-toggle="opcao">1</a></li>
+                    <li id="li2" class="tab col s3 disabled"><a id ="opcao2" class="" href="#part2" data-toggle="opcao">2</a></li>
+                   
+                </ul>
+            </div>
+          </div>
+<!--=======================================================================================================================  
+                                       FIM de moldais      
+=======================================================================================================================-->  
+
+
+                <div class="preloader-wrapper big active" id="carregando">
+                    <div class="spinner-layer spinner-blue-only">
+                      <div class="circle-clipper left">
+                        <div class="circle"></div>
+                      </div><div class="gap-patch">
+                        <div class="circle"></div>
+                      </div><div class="circle-clipper right">
+                        <div class="circle"></div>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="row box-informacao invisivel" id="infobox">
+                    <div class="col s12 m5">
+                      <div class="card-panel teal informacao-shadow">
+                        <span class="white-text">
+                           <div class="collection">
+                              <a href="#!" class="collection-item info-item"><span id="infoti" class="badge"></span>Tipo:</a>
+                              <a href="#!" class="collection-item info-item"><span id="infoci" class="badge"></span>Cidade:</a>
+                              <a href="#!" class="collection-item info-item"><span id="infoba" class="badge"></span>Bairro:</a>
+                              <a href="#!" class="collection-item info-item"><span id="infoda" class="badge"></span>Data:</a>
+                              <a href="#!" class="collection-item info-item"><span id="infoho" class="badge"></span>Horário:</a>
+                              <a class="waves-effect waves-teal btn-flat center-align blue darken-1 info-button" onclick="fecharinfo();">Fechar</a>
+                          </div>
+                        </span>
+                      </div>
+                    </div>
+                  </div>
+<!--=======================================================================================================================
+                                  área de carregamento de ensaios
+==========================================================================================================================-->
+              <ul class="collection" id="colecao-eventos">
+
+                 
+                  
+              </ul>
+
+<!--=======================================================================================================================-->      
+
+        </div>
+<!--==========================================================================================================================          
+                                        Amigos  
+===========================================================================================================================-->         
+        <div id="amigos" class="col s12 conteudo">
+           
+      
+
+
+
+
+
+        </div>
+<!--=======================================================================================================================         
+                                          Config  
+===========================================================================================================================-->        
+        <div id="conta" class="col s12 conteudo-home">
+            
+
+          
 
           <div class="row">
           <div class="card-panel  teal darken-3" id="configWallpaper">

@@ -98,6 +98,7 @@ var db; //variavel para banco de dados
   		  
 		   
         loadWallpaper();
+        loadHome();
         document.addEventListener("pause", onPause, false);
         document.addEventListener("resume", onResume, false);
         document.addEventListener("menubutton", onMenuKeyDown, false);
