@@ -65,6 +65,10 @@ var bairro;
 	 	logarUser();
 	 });
 
+	 $("#desconectUser").click(function(){
+	 	desconectUser();
+	 });
+
 	$("#cadastrese").click(function(){
 
 
@@ -376,16 +380,25 @@ function msgConexao(resposta){
 	var liResposta = document.querySelector("#li-resposta");
 	var iconConexao = document.querySelector("#iconConexao");
 	var formLogin = document.querySelector("#form-login");
-	var msg = document.querySelector("#erro");
+	var msg = document.querySelector("#userCon");
+	var btnDesconect= document.querySelector("#desconectUser");
 
 	            if(resposta == 'ok'){
-	            	let user = lookuser();
-	            	  if(user){
-	            	  	loadUser();
-	            	  	formLogin.classList.add("invisivel");
-	            	  	msg.textContent = 'Usuário conectado.';
-	            	  }
-					
+	            	
+	            	 
+
+			            		db = window.sqlitePlugin.openDatabase({name: 'DB', location: 'default'});
+								db.executeSql('SELECT * FROM usuario', [], function(rs){
+
+											if (rs.rows.item(0).nome){
+												loadUser();
+							            	  	formLogin.classList.add("invisivel");
+							            	  	btnDesconect.classList.remove("invisivel2");
+							            	  	msg.textContent = '';
+
+											}			       
+								});
+
 					//liResposta.classList.add("green");
 					iconConexao.classList.add("conexaon");
 

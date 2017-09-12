@@ -101,13 +101,6 @@ function showTable(){
 
 
 }
-//======================================================================================
-function dropTable(tbnome){
-	 db.executeSql('DROP TABLE IF EXISTS '+ tbnome);
-	 criaTable(tbnome);
-	 
-
-}
 
 
 //======================================================================================
@@ -137,6 +130,14 @@ function buscaEventos(){
 
 }
 
+//======================================================================================
+function dropTable(tbnome){
+	 db.executeSql('DROP TABLE IF EXISTS '+ tbnome);
+	 criaTable(tbnome);
+	 
+
+}
+//======================================================================================
 function criaTable(tipo){
 
 		db = window.sqlitePlugin.openDatabase({name: 'DB', location: 'default'});
@@ -160,7 +161,7 @@ function criaTable(tipo){
     	
 }
 
-
+//======================================================================================
 
 function montaEventos(){
 
@@ -225,7 +226,7 @@ function montaEventos(){
 
 
 }
-
+//======================================================================================
 function showboxinfo(id){
 
 	var div = document.querySelector("#infobox");
@@ -252,6 +253,7 @@ function showboxinfo(id){
 	
 	
 }
+//======================================================================================
 function loadWallpaper(){
 
 	var wallpaper = document.querySelector("#img-wallpaper");
@@ -266,7 +268,7 @@ function loadWallpaper(){
 
 	});
 }
-
+//======================================================================================
 function updateWallpaper(wallpaper){
 
   db = window.sqlitePlugin.openDatabase({name: 'DB', location: 'default'});
@@ -291,7 +293,7 @@ function updateWallpaper(wallpaper){
 
 
 }
-
+//======================================================================================
 function closeDB() {
     db.close(function () {
         console.log("DB closed!");

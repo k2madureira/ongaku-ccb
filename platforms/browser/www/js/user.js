@@ -37,6 +37,7 @@ function logarUser(){
 	var senha = $("#senha").val();
 	var requisicao = 'login';
 	var msg = document.querySelector("#li-erro");
+	var btnFecha = document.querySelector(".btn-fecha-user ");
 
 	$.ajax({
 		type:"POST",
@@ -68,10 +69,44 @@ function logarUser(){
 				
 				
 				addUserLocal(data);
+                btnFecha.click();
 
 			}
 
 			
+
+		},
+		error:function(jqXHR,exception){
+
+				if(jqXHR.status == 0){
+
+					setTimeout(function(){
+						msg.classList.add("red");
+						msg.textContent = 'Sem conexão!';
+
+					},500);
+					setTimeout(function(){
+						msg.classList.remove("red");
+						msg.textContent='';
+					},4000);
+				}
+				if(jqXHR.status == 404){
+
+					console.log('Página não encontrada [404]');
+
+				}if(jqXHR.status == 105){
+
+					setTimeout(function(){
+						msg.classList.add("red");
+						msg.textContent = 'Sem conexão!';
+
+					},500);
+					setTimeout(function(){
+						msg.classList.remove("red");
+						msg.textContent='';
+					},4000);
+
+				}
 
 		}
 	});
@@ -79,6 +114,24 @@ function logarUser(){
 
 }
 
+function desconectUser(){
+
+	var btnDesconect= document.querySelector("#desconectUser");
+	var formLogin = document.querySelector("#form-login");
+	var msg = document.querySelector("#userCon");
+	var campNome = document.querySelector("#login-nome");
+    var campCargo = document.querySelector("#login-cargo");
+
+
+	btnDesconect.classList.add("invisivel2");
+	formLogin.classList.remove("invisivel");
+	campNome.textContent  = '';
+	campCargo.textContent = '';
+	msg.textContent 	  = '';
+	dropTable('usuario');
+	
+
+}
 
 
 
