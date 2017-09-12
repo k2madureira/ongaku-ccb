@@ -43,15 +43,7 @@ var bairro;
 	 	
 	 	
 	 });
-/*
-	 $("#btnSalvar").click(function(){
 
-	 	var home =document.querySelector("#navHome");
-		
-	 	home.click();
-	 	
-	 	Materialize.toast('Ensaio adicionado', 4000);
-	 });*/
 
 	 $("#icon-help-box").click(function(){
 	 	
@@ -64,11 +56,12 @@ var bairro;
 	 $("#login-conexao").click(function(){
 
 	 	 testaConexao();
-	 	 loadUser();
+	 	 
 
 	 });
 
 	 $("#logarUser").click(function(){
+
 	 	logarUser();
 	 });
 
@@ -145,6 +138,7 @@ var bairro;
  function loadHome(){
 
  		var loginButton = document.querySelector(".iconMenu-contorno");
+		var home =document.querySelector("#navHome");
 		var wallpaper=document.querySelector("#img-wallpaper");
 		var svgmic = document.querySelector("#svgmic");
 		var homeWallpaper = $("#selectWallpaper").val();
@@ -153,7 +147,7 @@ var bairro;
 		
 			let load =document.querySelector("#carregando-wallpaper");
 
-			
+			home.click();
 			wallpaper.classList.add("invisivel");
 			svgmic.classList.add("invisivel2");
 			loginButton.classList.add("invisivel2");
@@ -167,6 +161,7 @@ var bairro;
 				svgmic.classList.remove("invisivel2");
 				loginButton.classList.remove("invisivel2");
 			},2000);
+			
 			
  }
 
@@ -353,12 +348,24 @@ var bairro;
 			url:"https://twoconeb.000webhostapp.com/projetos/ongakuCcb/bd/testaConexao.php",
 			success:function(data){
 				
-				if(data){
-					
-					msgConexao(data);
-
-				}
+				msgConexao(data);
+	
 				
+			},
+			error:function(jqXHR,exception){
+				if(jqXHR.status == 0){
+
+					msgConexao('off');
+				}
+				if(jqXHR.status == 404){
+
+					console.log('Página não encontrada [404]');
+
+				}if(jqXHR.status == 105){
+
+					msgConexao('off');
+				}
+
 			}
 		});
  	
@@ -368,8 +375,16 @@ function msgConexao(resposta){
 	var campResposta = document.querySelector("#resposta-server");
 	var liResposta = document.querySelector("#li-resposta");
 	var iconConexao = document.querySelector("#iconConexao");
+	var formLogin = document.querySelector("#form-login");
+	var msg = document.querySelector("#erro");
 
 	            if(resposta == 'ok'){
+	            	let user = lookuser();
+	            	  if(user){
+	            	  	loadUser();
+	            	  	formLogin.classList.add("invisivel");
+	            	  	msg.textContent = 'Usuário conectado.';
+	            	  }
 					
 					//liResposta.classList.add("green");
 					iconConexao.classList.add("conexaon");

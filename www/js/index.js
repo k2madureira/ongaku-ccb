@@ -43,15 +43,7 @@ var bairro;
 	 	
 	 	
 	 });
-/*
-	 $("#btnSalvar").click(function(){
 
-	 	var home =document.querySelector("#navHome");
-		
-	 	home.click();
-	 	
-	 	Materialize.toast('Ensaio adicionado', 4000);
-	 });*/
 
 	 $("#icon-help-box").click(function(){
 	 	
@@ -64,12 +56,17 @@ var bairro;
 	 $("#login-conexao").click(function(){
 
 	 	 testaConexao();
-	 	 loadUser();
+	 	 
 
 	 });
 
 	 $("#logarUser").click(function(){
+
 	 	logarUser();
+	 });
+
+	 $("#desconectUser").click(function(){
+	 	desconectUser();
 	 });
 
 	$("#cadastrese").click(function(){
@@ -355,12 +352,24 @@ var bairro;
 			url:"https://twoconeb.000webhostapp.com/projetos/ongakuCcb/bd/testaConexao.php",
 			success:function(data){
 				
-				if(data){
-					
-					msgConexao(data);
-
-				}
+				msgConexao(data);
+	
 				
+			},
+			error:function(jqXHR,exception){
+				if(jqXHR.status == 0){
+
+					msgConexao('off');
+				}
+				if(jqXHR.status == 404){
+
+					console.log('Página não encontrada [404]');
+
+				}if(jqXHR.status == 105){
+
+					msgConexao('off');
+				}
+
 			}
 		});
  	
@@ -370,9 +379,26 @@ function msgConexao(resposta){
 	var campResposta = document.querySelector("#resposta-server");
 	var liResposta = document.querySelector("#li-resposta");
 	var iconConexao = document.querySelector("#iconConexao");
+	var formLogin = document.querySelector("#form-login");
+	var msg = document.querySelector("#userCon");
+	var btnDesconect= document.querySelector("#desconectUser");
 
 	            if(resposta == 'ok'){
-					
+	            	
+	            	 
+
+			            		db = window.sqlitePlugin.openDatabase({name: 'DB', location: 'default'});
+								db.executeSql('SELECT * FROM usuario', [], function(rs){
+
+											if (rs.rows.item(0).nome){
+												loadUser();
+							            	  	formLogin.classList.add("invisivel");
+							            	  	btnDesconect.classList.remove("invisivel2");
+							            	  	msg.textContent = '';
+
+											}			       
+								});
+
 					//liResposta.classList.add("green");
 					iconConexao.classList.add("conexaon");
 

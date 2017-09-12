@@ -92,12 +92,15 @@ var db; //variavel para banco de dados
 
           db.executeSql('INSERT INTO config (wallpaper) VALUES (?)', ['img/wallpaper1.jpg']);
 
+        }else{
+          var wallpaper = document.querySelector("#img-wallpaper");
+          wallpaper.src = String(rs.rows.item(0).wallpaper);
         }
       });
 
   		  
 		   
-        loadWallpaper();
+        //loadWallpaper();
       
         document.addEventListener("pause", onPause, false);
         document.addEventListener("resume", onResume, false);

@@ -26,6 +26,7 @@ return 'ok';
 
 function addUserLocal(data){
 
+
 db = window.sqlitePlugin.openDatabase({name: 'DB', location: 'default'});
 var idusuario = data.idusuario;
 var nome = String(data.nome);
@@ -40,7 +41,7 @@ db.executeSql('SELECT * FROM usuario', [], function(rs){
    
 	if(rs.rows.length==0){
 
-     alert('usuario inserido');
+     
      db.executeSql('INSERT INTO usuario (idusuario, nome, email, cargo) VALUES (?,?,?,?)', [idusuario, nome, email, cargo]);
      
 
@@ -100,13 +101,6 @@ function showTable(){
 
 
 }
-//======================================================================================
-function dropTable(tbnome){
-	 db.executeSql('DROP TABLE IF EXISTS '+ tbnome);
-	 criaTable(tbnome);
-	 
-
-}
 
 
 //======================================================================================
@@ -136,6 +130,14 @@ function buscaEventos(){
 
 }
 
+//======================================================================================
+function dropTable(tbnome){
+	 db.executeSql('DROP TABLE IF EXISTS '+ tbnome);
+	 criaTable(tbnome);
+	 
+
+}
+//======================================================================================
 function criaTable(tipo){
 
 		db = window.sqlitePlugin.openDatabase({name: 'DB', location: 'default'});
@@ -159,7 +161,7 @@ function criaTable(tipo){
     	
 }
 
-
+//======================================================================================
 
 function montaEventos(){
 
@@ -224,7 +226,7 @@ function montaEventos(){
 
 
 }
-
+//======================================================================================
 function showboxinfo(id){
 
 	var div = document.querySelector("#infobox");
@@ -251,6 +253,7 @@ function showboxinfo(id){
 	
 	
 }
+//======================================================================================
 function loadWallpaper(){
 
 	var wallpaper = document.querySelector("#img-wallpaper");
@@ -265,7 +268,7 @@ function loadWallpaper(){
 
 	});
 }
-
+//======================================================================================
 function updateWallpaper(wallpaper){
 
   db = window.sqlitePlugin.openDatabase({name: 'DB', location: 'default'});
@@ -290,7 +293,7 @@ function updateWallpaper(wallpaper){
 
 
 }
-
+//======================================================================================
 function closeDB() {
     db.close(function () {
         console.log("DB closed!");

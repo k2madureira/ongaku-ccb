@@ -1,3 +1,18 @@
+function lookuser(){
+var resposta;
+
+db = window.sqlitePlugin.openDatabase({name: 'DB', location: 'default'});
+	db.executeSql('SELECT * FROM usuario', [], function(rs){
+
+				resposta = rs.rows.item(0).nome;
+				return resposta;
+
+		       Materialize.toast('User:'+resposta, 4000);
+	});
+
+
+}
+
 
 function loadUser(){
 var campNome = document.querySelector("#login-nome");

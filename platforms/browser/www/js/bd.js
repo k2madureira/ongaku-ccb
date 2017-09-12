@@ -26,6 +26,7 @@ return 'ok';
 
 function addUserLocal(data){
 
+
 db = window.sqlitePlugin.openDatabase({name: 'DB', location: 'default'});
 var idusuario = data.idusuario;
 var nome = String(data.nome);
@@ -40,7 +41,7 @@ db.executeSql('SELECT * FROM usuario', [], function(rs){
    
 	if(rs.rows.length==0){
 
-     alert('usuario inserido');
+     
      db.executeSql('INSERT INTO usuario (idusuario, nome, email, cargo) VALUES (?,?,?,?)', [idusuario, nome, email, cargo]);
      
 

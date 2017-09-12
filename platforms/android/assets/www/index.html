@@ -225,7 +225,8 @@
 <!--============================  menu login====================================================================--> 
 
           <ul id="slide-out" class="side-nav">
-            <li><div class="user-view">
+            <li>
+            <div class="user-view">
               <div class="background">
                 <img src="img/loginback.jpg">
               </div>
@@ -238,12 +239,16 @@
 
             </div></li>
             <li class="" id="li-resposta">
-            <svg id="iconConexao" class="icon icon-connection"><use xlink:href="#icon-connection"></use></svg>  
+            <svg id="iconConexao" class="icon icon-connection"><use xlink:href="#icon-connection"></use><h1 id="userCon"></h1></svg>  
               
             <p id="resposta-server"></p>
             </li>
             <li class="" id="li-erro"><p id="erro"></p></li>
             <li><div class="divider"></div></li>
+              
+
+              <br><h1 id="desconectUser" class="valign-wrapper center-align waves-effect waves-light btn-flat cyan darken-4 btn-logar invisivel2">Logout</h1>
+
 
             <div id="form-login" class="fontebase">
                 <form class="col s12" method="post" onsubmit="">
