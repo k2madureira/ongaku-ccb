@@ -1,7 +1,8 @@
+var permissao = '';
 
 function escuta(){
 
-	var permissao = '';
+	
 	var settings = { lang: "pt-BR",matches:1 ,showPopup: true }; 
 	var Escuta = document.querySelector(".btn-fala");
 	
@@ -17,25 +18,22 @@ function escuta(){
 
 
 	window.plugins.speechRecognition.hasPermission(function (isGranted){ 
+
 		if(isGranted){ 
 			
-			permissao = 'ok';
-		}else{ 
-		 	//alert("vamos pedir ao seu celular?");
-		} 
+			//permissao = 'ok';
+		}
 	}, function(err){ 
 		//alert("A permissão não é garantida");
 	});
 
-	if(permissao == 'ok'){
+	
 		window.plugins.speechRecognition.requestPermission(function (){ 
 		   // alert("tudo ok boss");
 		 }, function (err){ 
 		 	//alert("desculpa boss, celular não permitiu!"); 
 		 });
-	}else{
-		//alert("permissão não concedida");
-	}
+	
 
 	window.plugins.speechRecognition.getSupportedLanguages(function(data){ 
 		console.log(' download data lenguage done');
@@ -91,14 +89,14 @@ function speechNovo(text){
 
 }
 function speechLogar(text){
-	Materialize.toast('logar onde?', 2000); 
+	Materialize.toast('login?', 2000); 
 }
 function speechAmigos(text){
 	var navAmigos= document.querySelector("#voiceAmigos");
 
 	navAmigos.click();
 
-	Materialize.toast('é uma piada?', 2000); 
+	Materialize.toast('Função em construção!', 2000); 
 }
 
 function speechFome(text){

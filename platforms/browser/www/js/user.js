@@ -236,8 +236,15 @@ function Efetuacadastro(dados){
 			              beforeSend: function(){console.log('cadastrando...');},
 			              success: function(data){
 			    					
-			              		let tudocerto = boxSucesso(); // Abrindo mensagem de sucesso ao cadastrar e recarregar pág.
-				                   
+
+			    				if(data == 'fail'){
+
+			    					let erro='email';
+			    					mensagemErro(erro);
+			    				
+			    				}else{
+			              			let tudocerto = boxSucesso(); // Abrindo mensagem de sucesso ao cadastrar e recarregar pág.
+				                }   
 			                  }
 			          
 			              });
@@ -257,6 +264,7 @@ function mensagemErro(elemento){
 		var padraoUm ='Por favor, preencha todos campos.';
 		var senha ='As senhas devem ser iquais.';
 		var senhaIncompleta ='A senha deve possuir de 7 a 14 caracteres.';
+		var emailRepetido = 'Este email já está cadastrado.';
 
 /*==================================================================================*/
 
@@ -277,8 +285,12 @@ function mensagemErro(elemento){
 			        		msg.classList.add("red");
 			            	msg.textContent = senhaIncompleta;
 			        	}
+			        	if(elemento == 'email'){
+			        		msg.classList.add("red");
+			            	msg.textContent = emailRepetido;
+			        	}
 
-			       	},1000);
+			       	},500);
 			      	setTimeout(function(){       
 
 			                    clearInterval(erro);
@@ -294,7 +306,7 @@ function boxSucesso(){
 
 	
 	var msg = document.querySelector("#li-erro");
-
+	var btnfechar = document.querySelector("#cancel-cadastro");
 
 
 				let sucesso=setTimeout(function(){
@@ -306,10 +318,11 @@ function boxSucesso(){
 			       	},2000);
 			      	setTimeout(function(){       
 
-			                    
+			                   msg.textContent='';
+			                   btnfechar.click();  
 			                   	
 			                   	
-			             },10000);
+			             },5000);
 
 
 

@@ -81,6 +81,9 @@ var db; //variavel para banco de dados
 
     	db.executeSql('SELECT * FROM config', [], function(rs){
 
+        var wallpaper = document.querySelector("#img-wallpaper");
+
+
         if (rs.rows.length==0){
           db.executeSql('INSERT INTO wallpaper (wallpaper) VALUES (?)', ['img/wallpaper1.png']);
           db.executeSql('INSERT INTO wallpaper (wallpaper) VALUES (?)', ['img/wallpaper2.png']);
@@ -91,9 +94,10 @@ var db; //variavel para banco de dados
           db.executeSql('INSERT INTO clave (clave) VALUES (?)', ['img/clave3.png']);
 
           db.executeSql('INSERT INTO config (wallpaper) VALUES (?)', ['img/wallpaper1.jpg']);
+          wallpaper.src= 'img/wallpaper1.jpg';
 
         }else{
-          var wallpaper = document.querySelector("#img-wallpaper");
+          
           wallpaper.src = String(rs.rows.item(0).wallpaper);
         }
       });
