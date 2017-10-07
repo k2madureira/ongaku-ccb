@@ -23,7 +23,37 @@ return 'ok';
 
 
 }
+//======================================================================================
+function deletarEnsaio(){
 
+	
+	var id= $("#infoid").val();
+
+	//Materialize.toast('Deletar?'+id, 5000);
+	db = window.sqlitePlugin.openDatabase({name: 'DB', location: 'default'});
+	db.executeSql('DELETE FROM ensaios WHERE idensaio= ?',[id]);
+	updateDiv();
+	/*
+	db.transaction(function (tx) {
+
+        var query = "DELETE FROM ensaios WHERE idensaio = ?";
+
+        tx.executeSql(query, [id], function (tx, res) {
+            console.log("removeId: " + res.insertId);
+            console.log("rowsAffected: " + res.rowsAffected);
+        },
+        function (tx, error) {
+            console.log('DELETE error: ' + error.message);
+        });
+    }, function (error) {
+        console.log('transaction error: ' + error.message);
+    }, function () {
+        console.log('transaction ok');
+    });*/
+
+}
+
+//======================================================================================
 function addUserLocal(data){
 
 
@@ -239,12 +269,13 @@ function showboxinfo(id){
 		for(let i =0; i< rs.rows.length; i++){
 
 			if(rs.rows.item(i).idensaio == id){
+				$("#infoid").val(String(rs.rows.item(i).idensaio));
 				$("#infoti").html(String(rs.rows.item(i).tipo));
 				$("#infoci").html(String(rs.rows.item(i).cidade));
 				$("#infoba").html(String(rs.rows.item(i).bairro));
 				$("#infoda").html(String(rs.rows.item(i).data));
 				$("#infoho").html(String(rs.rows.item(i).horario));	
-				
+			
 			}
 		}
 

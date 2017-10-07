@@ -44,6 +44,12 @@ var bairro;
 	 	
 	 });
 
+	 $("#btnDel").click(function(){
+
+
+	 	
+	 	deletarEnsaio();
+	 });
 
 	 $("#icon-help-box").click(function(){
 	 	

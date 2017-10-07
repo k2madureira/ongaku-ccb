@@ -44,6 +44,64 @@ var bairro;
 	 	
 	 });
 
+	 $("#btnDel").click(function(){
+
+	 	var boxDel = document.querySelector("#boxDel");
+	 	var masc = document.querySelector("#masc");
+	 	var btnfechar= document.querySelector("#btnfechar");
+	 	boxDel.classList.remove("invisivel");
+	 	masc.classList.remove("invisivel");
+	 	btnfechar.click();
+	 	
+	 });
+
+	 $("#sdel").click(function(){
+
+	 	var boxDel = document.querySelector("#boxDel");
+	 	var masc = document.querySelector("#masc");
+	 	boxDel.classList.add("invisivel");
+	 	masc.classList.add("invisivel");
+	 	deletarEnsaio();
+	 });
+
+	 $("#ndel").click(function(){
+
+	 	var boxDel = document.querySelector("#boxDel");
+	 	var masc = document.querySelector("#masc");
+
+	 	boxDel.classList.add("invisivel");
+	 	masc.classList.add("invisivel");
+	 });
+
+	 $("#btnDelAll").click(function(){
+
+	 	var boxDel = document.querySelector("#boxDelAll");
+	 	var masc = document.querySelector("#mascAll");
+	 	var btnfechar= document.querySelector("#btnfechar");
+	 	boxDel.classList.remove("invisivel");
+	 	masc.classList.remove("invisivel");
+	 	btnfechar.click();
+	 	
+	 });
+
+	 $("#sdelAll").click(function(){
+
+	 	var boxDel = document.querySelector("#boxDelAll");
+	 	var masc = document.querySelector("#mascAll");
+	 	boxDel.classList.add("invisivel");
+	 	masc.classList.add("invisivel");
+	 	dropTable('ensaios');
+	 });
+	 $("#ndelAll").click(function(){
+
+	 	var boxDel = document.querySelector("#boxDelAll");
+	 	var masc = document.querySelector("#mascAll");
+
+	 	boxDel.classList.add("invisivel");
+	 	masc.classList.add("invisivel");
+	 });
+
+
 
 	 $("#icon-help-box").click(function(){
 	 	

@@ -363,7 +363,14 @@ input[type=text]{
 	/*overflow-y: hidden;*/
 
 }
-
+.mascara-conteudo{
+	width: 100%;
+	height: 32rem;
+	background: #000;
+	opacity: 0.5;
+	position: fixed;
+	z-index: 998;
+}
 
 .conteudo-home{
 	width: 100%;
@@ -498,6 +505,12 @@ input[type=text]{
 	font-size: 2rem !important;
 	padding-top: 0.1em;	
 
+}
+
+.confirmDelet{
+	margin-top: 50% !important;
+	position: fixed !important;
+	z-index: 999 !important;
 }
 /*============================== SVG =============================*/
 
@@ -681,6 +694,16 @@ input[type=text]{
 	position: relative;
 	overflow-x: hidden;	
 }
+
+.mascara-conteudo{
+	width: 100%;
+	height: 36.7rem;
+	background: #000;
+	opacity: 0.5;
+	position: fixed;
+	z-index: 998;
+}
+
 .svg{
 	width: 35%;
 	height: 10%;
@@ -815,6 +838,12 @@ input[type=text]{
  	box-shadow: 1rem 1rem 3rem #000 ;
 }
 
+.confirmDelet{
+	margin-top: 50% !important;
+	margin-left: 5%;
+	position: fixed !important;
+	z-index: 999 !important;
+}
 
 }
 @media (min-width: 412px){	
@@ -844,6 +873,15 @@ input[type=text]{
 	position: relative;
 	overflow-x: hidden;	
 }
+.mascara-conteudo{
+	width: 100%;
+	height: 38rem;
+	background: #000;
+	opacity: 0.5;
+	position: fixed;
+	z-index: 998;
+}
+
 .nav-label{
 	font-size: 0.8rem !important;
 }
@@ -924,6 +962,15 @@ input[type=text]{
 	position: relative;
 	overflow-x: hidden;	
 }
+.mascara-conteudo{
+	width: 100%;
+	height: 38rem;
+	background: #000;
+	opacity: 0.5;
+	position: fixed;
+	z-index: 998;
+}
+
 .nav-label{
 	font-size: 0.8rem !important;
 }
@@ -1010,7 +1057,16 @@ input[type=text]{
 	margin-top: 0 auto;
 	position: relative;
 	overflow-x: hidden;	
-}	
+}
+.mascara-conteudo{
+	width: 100%;
+	height: 42rem;
+	background: #000;
+	opacity: 0.5;
+	position: fixed;
+	z-index: 998;
+}
+
 .nav-label{
 	font-size: 0.8rem !important;
 }
